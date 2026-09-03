@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Belleza&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0B0A0C; color: #F1ECE1; font-family: Montserrat, sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #B984B0; }
+  ::selection { background: #6E2A5C; color: #F1ECE1; }
+</style>
+</helmet>
+
+<div style="background:#0B0A0C; color:#F1ECE1; overflow-x:hidden">
+
+  <nav style="position:sticky; top:0; zIndex:50; display:flex; alignItems:center; justifyContent:space-between; gap:2rem; padding:1rem 5vw; background:rgba(11,10,12,0.88); borderBottom:1px solid rgba(241,236,225,0.12)">
+    <a href="#top" style="fontFamily:Belleza, sans-serif; fontSize:0.9rem; letterSpacing:0.28em; textTransform:uppercase; whiteSpace:nowrap">J Bowman</a>
+    <div style="display:flex; gap:1.4rem; fontSize:0.58rem; fontWeight:500; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.55); flexWrap:wrap; justifyContent:flex-end">
+      <a href="#overview" style-hover="color:#F1ECE1">01 Overview</a>
+      <a href="#objectives" style-hover="color:#F1ECE1">02 Objectives</a>
+      <a href="#audiences" style-hover="color:#F1ECE1">03 Audiences</a>
+      <a href="#messaging" style-hover="color:#F1ECE1">04 Messaging</a>
+      <a href="#architecture" style-hover="color:#F1ECE1">05 Architecture</a>
+      <a href="#homepage" style-hover="color:#F1ECE1">06 Homepage</a>
+      <a href="#portfolio" style-hover="color:#F1ECE1">07 Portfolio</a>
+      <a href="#content" style-hover="color:#F1ECE1">08 Content</a>
+      <a href="#visual" style-hover="color:#F1ECE1">09 Visual</a>
+      <a href="#functional" style-hover="color:#F1ECE1">10 Functional</a>
+      <a href="#standards" style-hover="color:#F1ECE1">11 Standards</a>
+      <a href="#search" style-hover="color:#F1ECE1">12 Search</a>
+      <a href="#agency" style-hover="color:#F1ECE1">13 Agency</a>
+      <a href="#acceptance" style-hover="color:#F1ECE1">14 Acceptance</a>
+      <a href="#decisions" style-hover="color:#F1ECE1">15 Decisions</a>
+      <a href="#phases" style-hover="color:#F1ECE1">16 Phases</a>
+    </div>
+  </nav>
+
+  <header id="top" style="position:relative; display:grid; gridTemplateColumns:1.15fr 0.85fr; alignItems:end; borderBottom:1px solid rgba(241,236,225,0.12); minHeight:88vh">
+    <div style="padding:6rem 5vw 4rem; display:flex; flexDirection:column; gap:2.2rem">
+      <div style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Website strategy &amp; creative brief</div>
+      <h1 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(2.6rem,6.4vw,8rem); lineHeight:0.94; letterSpacing:0.03em; textTransform:uppercase; whiteSpace:nowrap">J Bowman</h1>
+      <div style="width:100%; height:1px; background:rgba(241,236,225,0.14)"></div>
+      <div style="display:flex; flexDirection:column; gap:1.4rem; maxWidth:34rem">
+        <p style="margin:0; fontSize:clamp(1.05rem,1.6vw,1.35rem); lineHeight:1.5; color:#B984B0">Sound that moves through culture.</p>
+        <p style="margin:0; fontSize:clamp(0.95rem,1.3vw,1.1rem); lineHeight:1.7; color:rgba(241,236,225,0.78)">A digital platform for sound, story and cultural collaboration. Website objective: turn an exceptional body of work into a current, compelling and commercially effective global presence.</p>
+      </div>
+      <div style="display:flex; gap:2.5rem; flexWrap:wrap; fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">
+        <span>Master brand · J Bowman</span>
+        <span>Writer | Composer | Producer | Musician | Sound Engineer</span>
+      </div>
+    </div>
+    <div style="position:relative; alignSelf:stretch; minHeight:60vh">
+      <img src="assets/portrait-hero-blend.png" alt="J Bowman portrait" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; objectPosition:center 20%; filter:grayscale(100%) contrast(1.08)" />
+      <div style="position:absolute; left:0; bottom:1.5rem; padding:0 1.5rem; fontStyle:italic; fontSize:0.85rem; color:rgba(241,236,225,0.85)">sound that moves through culture</div>
+    </div>
+  </header>
+
+  <section id="overview" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">01</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Project overview</h2>
+    </div>
+    <p style="margin:0 0 4rem; maxWidth:46rem; fontSize:clamp(1rem,1.4vw,1.2rem); lineHeight:1.65; color:rgba(241,236,225,0.82)">Create a premium, contemporary website that positions J Bowman as a multi-disciplinary creator working across records, film, television, advertising, brands and culture. The website must honour a multi-platinum, Grammy-nominated career while making the work feel active, relevant and ready for new commissions.</p>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:0 4rem">
+      <sc-for list="{{ overview }}" as="o" hint-placeholder-count="3">
+        <div style="padding:1.8rem 0; borderTop:1px solid rgba(241,236,225,0.14); display:flex; flexDirection:column; gap:0.7rem">
+          <span style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ o.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.68)">{{ o.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="marginTop:4rem; padding:2.5rem; border:1px solid #6E2A5C; display:flex; flexDirection:column; gap:1rem; maxWidth:52rem">
+      <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">Primary design test</span>
+      <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(1.2rem,2.4vw,1.8rem); lineHeight:1.3; letterSpacing:0.03em">Within 30 seconds, can a music supervisor, director, artist or creative lead understand who J Bowman is, feel the calibre of the work and know how to engage him?</span>
+    </div>
+  </section>
+
+  <section id="objectives" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">02</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Website objectives</h2>
+    </div>
+    <div style="display:flex; flexDirection:column">
+      <sc-for list="{{ objectives }}" as="o" hint-placeholder-count="5">
+        <div style="display:grid; gridTemplateColumns:minmax(7rem, 12rem) 1fr; gap:2rem; padding:1.6rem 0; borderTop:1px solid rgba(11,10,12,0.14); alignItems:baseline">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:1.1rem; letterSpacing:0.18em; textTransform:uppercase">{{ o.label }}</span>
+          <span style="fontSize:0.95rem; lineHeight:1.65; color:rgba(11,10,12,0.7)">{{ o.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="audiences" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">03</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Priority audiences</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(240px,1fr)); gap:0 4rem">
+      <sc-for list="{{ audiences }}" as="a" hint-placeholder-count="4">
+        <div style="padding:1.8rem 0; borderTop:1px solid rgba(241,236,225,0.14); display:flex; flexDirection:column; gap:0.7rem">
+          <span style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ a.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.68)">{{ a.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="messaging" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">04</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Messaging hierarchy</h2>
+    </div>
+    <div style="display:flex; flexDirection:column; gap:1.2rem; marginBottom:4rem">
+      <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Homepage headline</span>
+      <p style="margin:0; fontFamily:Belleza, sans-serif; fontSize:clamp(2rem,5vw,4.2rem); lineHeight:1.05; letterSpacing:0.03em; textTransform:uppercase; maxWidth:44rem">Sound that moves <em style="fontFamily:Montserrat, sans-serif; fontStyle:italic; fontSize:0.82em; color:#6E2A5C; textTransform:none">through culture</em>.</p>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:0 4rem">
+      <sc-for list="{{ messaging }}" as="m" hint-placeholder-count="7">
+        <div style="padding:1.7rem 0; borderTop:1px solid rgba(11,10,12,0.14); display:flex; flexDirection:column; gap:0.6rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(11,10,12,0.55)">{{ m.label }}</span>
+          <span style="fontSize:0.95rem; lineHeight:1.6; color:rgba(11,10,12,0.85)">{{ m.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="architecture" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">05</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Site architecture</h2>
+    </div>
+    <div style="display:flex; flexDirection:column">
+      <sc-for list="{{ architecture }}" as="a" hint-placeholder-count="8">
+        <div style="display:grid; gridTemplateColumns:3rem minmax(7rem,11rem) 1fr; gap:2rem; padding:1.5rem 0; borderTop:1px solid rgba(241,236,225,0.14); alignItems:baseline">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:0.8rem; letterSpacing:0.16em; color:#B984B0">{{ a.n }}</span>
+          <span style="fontFamily:Belleza, sans-serif; fontSize:1.05rem; letterSpacing:0.16em; textTransform:uppercase">{{ a.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.68)">{{ a.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="homepage" style="padding:8rem 0 0; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="padding:0 5vw 3.5rem">
+      <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:1.5rem">
+        <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">06</span>
+        <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Homepage experience</h2>
+      </div>
+      <p style="margin:0; maxWidth:42rem; fontSize:0.95rem; lineHeight:1.7; color:rgba(241,236,225,0.68)">Eight frames, in scroll order, drawn in the brand system so the sequence can be judged as design rather than description. Imagery is reference only until the shoot is commissioned.</p>
+    </div>
+
+    <div style="padding:0 5vw 8rem; display:flex; flexDirection:column; gap:5rem">
+
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(320px,1fr)); gap:2.5rem 4rem; alignItems:start">
+        <div style="border:1px solid rgba(241,236,225,0.14)">
+          <div style="display:flex; alignItems:center; gap:0.8rem; padding:0.6rem 0.9rem; borderBottom:1px solid rgba(241,236,225,0.12); fontSize:0.5rem; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.4)">jbowman.com</div>
+          <div style="position:relative; aspectRatio:16/9; overflow:hidden; background:#0B0A0C">
+            <img src="assets/portrait-hero-blend.png" alt="Opening frame" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; objectPosition:70% 18%; opacity:0.5; filter:grayscale(100%)" />
+            <span style="position:absolute; inset:0; background:linear-gradient(to right, rgba(11,10,12,0.92) 0%, rgba(11,10,12,0.6) 55%, rgba(11,10,12,0.25) 100%)"></span>
+            <div style="position:absolute; inset:0; display:flex; flexDirection:column; justifyContent:space-between; padding:1.4rem 1.6rem">
+              <div style="display:flex; justifyContent:space-between; alignItems:center; gap:1rem">
+                <span style="fontFamily:Belleza, sans-serif; fontSize:0.75rem; letterSpacing:0.24em; textTransform:uppercase">J Bowman</span>
+                <span style="display:flex; gap:1rem; fontSize:0.45rem; fontWeight:500; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.6)">Work · About · Services · Journal · Contact</span>
+              </div>
+              <div style="display:flex; flexDirection:column; gap:0.7rem; maxWidth:78%">
+                <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(1rem,2.6vw,2rem); lineHeight:1.05; letterSpacing:0.04em; textTransform:uppercase">Sound that moves through culture.</span>
+                <span style="fontSize:0.55rem; lineHeight:1.5; color:rgba(241,236,225,0.75)">Multi-platinum, Grammy-nominated songwriter, composer, producer, musician and sound engineer.</span>
+              </div>
+              <div style="display:flex; justifyContent:space-between; alignItems:flex-end; gap:1rem">
+                <span style="fontSize:0.45rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; border:1px solid rgba(241,236,225,0.5); padding:0.5rem 1rem">Explore the work ↓</span>
+                <span style="fontSize:0.45rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.6)">Sound off ·  ▶ Play reel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; flexDirection:column; gap:1rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">01 / Opening frame</span>
+          <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.7)">Full-viewport cinematic opening with the J BOWMAN wordmark, the headline, a concise credential line and immediate access to the hero reel. Sound must be opt-in, never autoplay unexpectedly.</span>
+        </div>
+      </div>
+
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(320px,1fr)); gap:2.5rem 4rem; alignItems:start">
+        <div style="border:1px solid rgba(241,236,225,0.14)">
+          <div style="display:flex; alignItems:center; gap:0.8rem; padding:0.6rem 0.9rem; borderBottom:1px solid rgba(241,236,225,0.12); fontSize:0.5rem; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.4)">Hero reel · 60–90 seconds</div>
+          <div style="position:relative; aspectRatio:16/9; overflow:hidden; background:#0B0A0C">
+            <img src="assets/stage-green-j.png" alt="Hero reel" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; objectPosition:center 30%; filter:grayscale(100%) contrast(1.05)" />
+            <span style="position:absolute; inset:0; background:linear-gradient(to top, rgba(11,10,12,0.9) 0%, rgba(11,10,12,0.2) 45%, rgba(11,10,12,0.4) 100%)"></span>
+            <div style="position:absolute; inset:0; display:flex; flexDirection:column; justifyContent:space-between; padding:1.4rem 1.6rem">
+              <span style="fontSize:0.45rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.6)">Reel · 01 / 04 · Records</span>
+              <div style="display:flex; flexDirection:column; gap:0.45rem; borderLeft:1px solid #B984B0; paddingLeft:0.8rem">
+                <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">Sound of Sunshine</span>
+                <span style="fontSize:0.5rem; letterSpacing:0.16em; textTransform:uppercase; color:rgba(241,236,225,0.7)">Composer · Guitarist · Mixer · Engineer</span>
+              </div>
+              <div style="display:flex; alignItems:center; gap:0.8rem">
+                <span style="flex:1; height:1px; background:rgba(241,236,225,0.25)"><span style="display:block; width:38%; height:1px; background:#F1ECE1"></span></span>
+                <span style="fontSize:0.45rem; letterSpacing:0.16em; color:rgba(241,236,225,0.6)">00:34 / 01:22</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; flexDirection:column; gap:1rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">02 / Hero reel</span>
+          <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.7)">A 60–90 second showreel moving across records, film, television, brands and performance. Show J Bowman's role on-screen so the visitor never has to infer his contribution.</span>
+        </div>
+      </div>
+
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(320px,1fr)); gap:2.5rem 4rem; alignItems:start">
+        <div style="border:1px solid rgba(241,236,225,0.14)">
+          <div style="display:flex; alignItems:center; gap:0.8rem; padding:0.6rem 0.9rem; borderBottom:1px solid rgba(241,236,225,0.12); fontSize:0.5rem; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.4)">Positioning</div>
+          <div style="aspectRatio:16/9; display:grid; gridTemplateColumns:1.15fr 0.85fr; background:#0B0A0C">
+            <div style="padding:1.6rem; display:flex; flexDirection:column; justifyContent:center; gap:1rem">
+              <span style="fontSize:0.45rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:#B984B0">The crossover</span>
+              <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(0.85rem,1.9vw,1.4rem); lineHeight:1.25; letterSpacing:0.02em">A songwriter's instinct, an engineer's craft, and a storyteller's eye for picture.</span>
+              <span style="fontSize:0.5rem; lineHeight:1.6; color:rgba(241,236,225,0.65)">Records, film, television, advertising, brands and culture — one point of view carried across all of them.</span>
+            </div>
+            <div style="position:relative; overflow:hidden">
+              <img src="assets/seated-j.jpg" alt="Positioning portrait" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; objectPosition:center 22%; filter:grayscale(100%) contrast(1.05)" />
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; flexDirection:column; gap:1rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">03 / Positioning</span>
+          <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.7)">A short statement establishing the crossover between songwriting instinct, engineering craft and storytelling for image. Pair with one current portrait or studio sequence.</span>
+        </div>
+      </div>
+
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(320px,1fr)); gap:2.5rem 4rem; alignItems:start">
+        <div style="border:1px solid rgba(241,236,225,0.14)">
+          <div style="display:flex; alignItems:center; gap:0.8rem; padding:0.6rem 0.9rem; borderBottom:1px solid rgba(241,236,225,0.12); fontSize:0.5rem; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.4)">Selected work</div>
+          <div style="aspectRatio:16/9; padding:1.2rem; display:flex; flexDirection:column; gap:0.9rem; background:#0B0A0C">
+            <div style="display:flex; gap:1.2rem; fontSize:0.45rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">
+              <span style="borderBottom:1px solid #B984B0; paddingBottom:0.3rem; color:#F1ECE1">All</span>
+              <span style="color:rgba(241,236,225,0.5)">Records</span>
+              <span style="color:rgba(241,236,225,0.5)">Picture</span>
+              <span style="color:rgba(241,236,225,0.5)">Brands / Culture</span>
+            </div>
+            <div style="flex:1; display:grid; gridTemplateColumns:repeat(3,1fr); gridTemplateRows:repeat(2,1fr); gap:0.5rem">
+              <sc-for list="{{ workTiles }}" as="w" hint-placeholder-count="6">
+                <div style="position:relative; overflow:hidden; background:#151318">
+                  <img src="{{ w.img }}" alt="{{ w.title }}" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; filter:grayscale(100%) contrast(1.08)" />
+                  <span style="position:absolute; inset:0; background:linear-gradient(to top, rgba(11,10,12,0.88) 0%, rgba(11,10,12,0) 55%)"></span>
+                  <div style="position:absolute; left:0; bottom:0; padding:0.5rem 0.6rem; display:flex; flexDirection:column; gap:0.15rem">
+                    <span style="fontSize:0.42rem; fontWeight:500; letterSpacing:0.14em; textTransform:uppercase">{{ w.title }}</span>
+                    <span style="fontSize:0.38rem; letterSpacing:0.12em; textTransform:uppercase; color:rgba(241,236,225,0.65)">{{ w.role }}</span>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; flexDirection:column; gap:1rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">04 / Selected work</span>
+          <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.7)">Six to nine hero projects using strong imagery and video. Allow visitors to browse by Records, Picture and Brands/Culture while keeping the first experience editorial rather than database-like.</span>
+        </div>
+      </div>
+
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(320px,1fr)); gap:2.5rem 4rem; alignItems:start">
+        <div style="border:1px solid rgba(241,236,225,0.14)">
+          <div style="display:flex; alignItems:center; gap:0.8rem; padding:0.6rem 0.9rem; borderBottom:1px solid rgba(241,236,225,0.12); fontSize:0.5rem; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.4)">Proof</div>
+          <div style="aspectRatio:16/9; padding:1.4rem 1.6rem; display:flex; flexDirection:column; justifyContent:center; gap:0.7rem; background:#F1ECE1; color:#0B0A0C">
+            <span style="fontSize:0.45rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:#6E2A5C">Selected proof · roles stated, no logo wall</span>
+            <sc-for list="{{ proofRows }}" as="p" hint-placeholder-count="4">
+              <div style="display:grid; gridTemplateColumns:1.4fr 1fr 0.9fr; gap:1rem; padding:0.5rem 0; borderTop:1px solid rgba(11,10,12,0.14); fontSize:0.48rem; letterSpacing:0.12em; textTransform:uppercase">
+                <span>{{ p.title }}</span>
+                <span style="color:rgba(11,10,12,0.6)">{{ p.detail }}</span>
+                <span style="color:#6E2A5C">{{ p.role }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex; flexDirection:column; gap:1rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">05 / Proof</span>
+          <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.7)">A restrained selection of recognised collaborators, chart achievements, screen placements and brand work. Avoid a crowded logo wall; use names and projects with accurate role descriptions.</span>
+        </div>
+      </div>
+
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(320px,1fr)); gap:2.5rem 4rem; alignItems:start">
+        <div style="border:1px solid rgba(241,236,225,0.14)">
+          <div style="display:flex; alignItems:center; gap:0.8rem; padding:0.6rem 0.9rem; borderBottom:1px solid rgba(241,236,225,0.12); fontSize:0.5rem; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.4)">Disciplines</div>
+          <div style="aspectRatio:16/9; padding:1.4rem 1.6rem; display:flex; flexDirection:column; justifyContent:center; gap:0.9rem; background:#0B0A0C">
+            <sc-for list="{{ disciplines }}" as="d" hint-placeholder-count="3">
+              <div style="display:grid; gridTemplateColumns:1fr 1.5fr auto; gap:1rem; alignItems:baseline; padding:0.7rem 0; borderTop:1px solid rgba(241,236,225,0.14)">
+                <span style="fontFamily:Belleza, sans-serif; fontSize:0.7rem; letterSpacing:0.14em; textTransform:uppercase">{{ d.label }}</span>
+                <span style="fontSize:0.48rem; lineHeight:1.5; color:rgba(241,236,225,0.65)">{{ d.body }}</span>
+                <span style="fontSize:0.42rem; fontWeight:500; letterSpacing:0.18em; textTransform:uppercase; color:#B984B0">{{ d.cta }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex; flexDirection:column; gap:1rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">06 / Disciplines</span>
+          <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.7)">Present the ways to work with J Bowman as creative outcomes, not a commodity service menu. Each pathway should lead to relevant proof and a specific enquiry prompt.</span>
+        </div>
+      </div>
+
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(320px,1fr)); gap:2.5rem 4rem; alignItems:start">
+        <div style="border:1px solid rgba(241,236,225,0.14)">
+          <div style="display:flex; alignItems:center; gap:0.8rem; padding:0.6rem 0.9rem; borderBottom:1px solid rgba(241,236,225,0.12); fontSize:0.5rem; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.4)">Current signal</div>
+          <div style="aspectRatio:16/9; display:grid; gridTemplateColumns:0.9fr 1.1fr; background:#0B0A0C">
+            <div style="position:relative; overflow:hidden">
+              <img src="assets/live-collab-j.png" alt="Current signal" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; filter:grayscale(100%) contrast(1.08)" />
+            </div>
+            <div style="padding:1.5rem; display:flex; flexDirection:column; justifyContent:center; gap:0.8rem">
+              <span style="fontSize:0.45rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:#B984B0">Now · Journal 014</span>
+              <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(0.8rem,1.7vw,1.2rem); lineHeight:1.25; letterSpacing:0.02em">In the room: writing to picture before the edit locks</span>
+              <span style="fontSize:0.48rem; lineHeight:1.6; color:rgba(241,236,225,0.65)">A short process note, a new sonic experiment or an archive story — proof the practice is active now.</span>
+              <span style="fontSize:0.42rem; fontWeight:500; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.7)">Read →</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; flexDirection:column; gap:1rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">07 / Current signal</span>
+          <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.7)">Feature current work, an observation, an archive story or a new sonic experiment to demonstrate that the practice is active now.</span>
+        </div>
+      </div>
+
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(320px,1fr)); gap:2.5rem 4rem; alignItems:start">
+        <div style="border:1px solid rgba(241,236,225,0.14)">
+          <div style="display:flex; alignItems:center; gap:0.8rem; padding:0.6rem 0.9rem; borderBottom:1px solid rgba(241,236,225,0.12); fontSize:0.5rem; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.4)">Conversion</div>
+          <div style="aspectRatio:16/9; padding:2rem; display:flex; flexDirection:column; justifyContent:center; gap:1.4rem; background:#6E2A5C">
+            <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(1rem,2.6vw,2rem); lineHeight:1.15; letterSpacing:0.03em; maxWidth:80%">Bring me the idea. We'll find its sound.</span>
+            <div style="display:flex; gap:0.8rem; alignItems:center; flexWrap:wrap">
+              <span style="fontSize:0.45rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; background:#F1ECE1; color:#0B0A0C; padding:0.55rem 1.3rem">Start a project</span>
+              <span style="fontSize:0.45rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.85)">Or email direct →</span>
+            </div>
+            <span style="fontSize:0.42rem; letterSpacing:0.16em; textTransform:uppercase; color:rgba(241,236,225,0.7)">Name · Organisation · Project type · Timing · Budget range</span>
+          </div>
+        </div>
+        <div style="display:flex; flexDirection:column; gap:1rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">08 / Conversion</span>
+          <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.7)">Close with a confident invitation: "Bring me the idea. We'll find its sound." Link to a short, low-friction project enquiry.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="portfolio" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">07</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Portfolio &amp; case studies</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:0 4rem">
+      <sc-for list="{{ portfolio }}" as="p" hint-placeholder-count="5">
+        <div style="padding:1.7rem 0; borderTop:1px solid rgba(11,10,12,0.14); display:flex; flexDirection:column; gap:0.6rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ p.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.68)">{{ p.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="content" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">08</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Content requirements</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:0 4rem">
+      <sc-for list="{{ content }}" as="c" hint-placeholder-count="6">
+        <div style="padding:1.7rem 0; borderTop:1px solid rgba(241,236,225,0.14); display:flex; flexDirection:column; gap:0.6rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ c.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.68)">{{ c.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="visual" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:1.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">09</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Visual &amp; interaction direction</h2>
+    </div>
+    <p style="margin:0 0 3.5rem; maxWidth:44rem; fontSize:0.95rem; lineHeight:1.7; color:rgba(11,10,12,0.7)">The website should feel like the intersection of an independent record imprint, a fashion editorial and a contemporary film studio. It must be visually confident, tactile and restrained — never a theme-driven "music website."</p>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:0 4rem">
+      <sc-for list="{{ visual }}" as="v" hint-placeholder-count="6">
+        <div style="padding:1.7rem 0; borderTop:1px solid rgba(11,10,12,0.14); display:flex; flexDirection:column; gap:0.6rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ v.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.68)">{{ v.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="functional" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">10</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Functional requirements</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:0 4rem">
+      <sc-for list="{{ functional }}" as="f" hint-placeholder-count="7">
+        <div style="padding:1.7rem 0; borderTop:1px solid rgba(241,236,225,0.14); display:flex; flexDirection:column; gap:0.6rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ f.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.68)">{{ f.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="standards" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">11</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Accessibility, privacy &amp; standards</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:0 4rem">
+      <sc-for list="{{ standards }}" as="s" hint-placeholder-count="5">
+        <div style="padding:1.7rem 0; borderTop:1px solid rgba(11,10,12,0.14); display:flex; flexDirection:column; gap:0.6rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ s.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.68)">{{ s.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="search" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">12</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Search &amp; market penetration</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:0 4rem">
+      <sc-for list="{{ search }}" as="s" hint-placeholder-count="5">
+        <div style="padding:1.7rem 0; borderTop:1px solid rgba(241,236,225,0.14); display:flex; flexDirection:column; gap:0.6rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ s.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.68)">{{ s.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="agency" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">13</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Agency deliverables</h2>
+    </div>
+    <div style="display:flex; flexDirection:column">
+      <sc-for list="{{ agency }}" as="a" hint-placeholder-count="6">
+        <div style="display:grid; gridTemplateColumns:minmax(8rem,14rem) 1fr; gap:2rem; padding:1.6rem 0; borderTop:1px solid rgba(11,10,12,0.14); alignItems:baseline">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:1.05rem; letterSpacing:0.16em; textTransform:uppercase">{{ a.label }}</span>
+          <span style="fontSize:0.92rem; lineHeight:1.65; color:rgba(11,10,12,0.7)">{{ a.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="acceptance" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">14</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Acceptance criteria</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:0 4rem">
+      <sc-for list="{{ acceptance }}" as="a" hint-placeholder-count="7">
+        <div style="padding:1.7rem 0; borderTop:1px solid rgba(241,236,225,0.14); display:flex; flexDirection:column; gap:0.6rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ a.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.68)">{{ a.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="decisions" style="padding:8rem 5vw; background:#6E2A5C; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:1.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:rgba(241,236,225,0.7)">15</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Decisions required before design</h2>
+    </div>
+    <p style="margin:0 0 3.5rem; maxWidth:40rem; fontSize:0.95rem; lineHeight:1.7; color:rgba(241,236,225,0.8)">Six calls to make. Everything downstream — architecture, shoot, reel and build — waits on these.</p>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(280px,1fr)); gap:0 4rem">
+      <sc-for list="{{ decisions }}" as="d" hint-placeholder-count="6">
+        <div style="padding:1.8rem 0; borderTop:1px solid rgba(241,236,225,0.3); display:flex; flexDirection:column; gap:0.7rem">
+          <span style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ d.label }}</span>
+          <span style="fontSize:0.92rem; lineHeight:1.65; color:rgba(241,236,225,0.82)">{{ d.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="phases" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:3.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">16</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Indicative delivery phases</h2>
+    </div>
+    <div style="display:flex; flexDirection:column">
+      <sc-for list="{{ phases }}" as="p" hint-placeholder-count="6">
+        <div style="display:grid; gridTemplateColumns:4rem minmax(7rem,11rem) 1fr; gap:2rem; padding:1.6rem 0; borderTop:1px solid rgba(11,10,12,0.14); alignItems:baseline">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:0.9rem; letterSpacing:0.16em; color:#6E2A5C">{{ p.n }}</span>
+          <span style="fontFamily:Belleza, sans-serif; fontSize:1.05rem; letterSpacing:0.16em; textTransform:uppercase">{{ p.label }}</span>
+          <span style="fontSize:0.92rem; lineHeight:1.65; color:rgba(11,10,12,0.7)">{{ p.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <footer style="padding:8rem 5vw 6rem; display:flex; flexDirection:column; gap:3rem; alignItems:flex-start">
+    <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">Final mandate</span>
+    <p style="margin:0; fontFamily:Belleza, sans-serif; fontSize:clamp(1.5rem,4vw,3.2rem); lineHeight:1.15; letterSpacing:0.04em; maxWidth:44rem">Build a digital world that makes the career credible, the work immediate and the next collaboration easy to begin.</p>
+    <div style="height:1px; width:100%; background:rgba(241,236,225,0.14)"></div>
+    <div style="display:flex; justifyContent:space-between; gap:2rem; width:100%; flexWrap:wrap; fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">
+      <span>Sound that moves through culture.</span>
+      <span>Confidential creative direction · September 2026</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      overview: [
+        { label: "The challenge", body: "Much of J Bowman's authority currently lives inside credits, relationships and past projects. The website must translate that authority into a concise digital experience that new decision-makers can understand immediately." },
+        { label: "The opportunity", body: "Build a platform that operates as portfolio, showreel, editorial world and business-development tool — without looking like a conventional recording-studio website." },
+        { label: "The shift", body: "From a career represented by a biography and credit list to a visible creative identity with an ownable point of view." }
+      ],
+      objectives: [
+        { label: "Position", body: "Establish J Bowman as a current creative auteur with rare breadth across songwriting, composition, production, musicianship, engineering and sound for picture." },
+        { label: "Prove", body: "Use carefully selected work, credible credits and role clarity to demonstrate experience without overwhelming visitors." },
+        { label: "Convert", body: "Generate qualified enquiries for original composition, sync, production, songwriting, engineering, mixing and cultural or fashion collaborations." },
+        { label: "Expand", body: "Open pathways into advertising, branded entertainment, sonic identity, runway, fashion film, installations and creative partnerships." },
+        { label: "Own", body: "Create a direct audience and discovery platform that is not dependent on social algorithms or third-party music profiles." }
+      ],
+      audiences: [
+        { label: "Primary commissioners", body: "Music supervisors, directors, producers, production companies, advertising creatives, agencies, networks, streaming platforms and brand content teams." },
+        { label: "Music industry", body: "Artists, managers, publishers, labels, producers and collaborators looking for writing, production, performance, engineering or mix expertise." },
+        { label: "Culture & fashion", body: "Fashion designers, creative directors, photographers, luxury and lifestyle brands, runway producers, experiential teams and cultural institutions." },
+        { label: "Media & community", body: "Journalists, curators, musicians, listeners, collectors and people discovering the person and process behind the work." }
+      ],
+      messaging: [
+        { label: "Master wordmark", body: "J BOWMAN. \u201CMusic\u201D must not appear as part of the logo or master wordmark." },
+        { label: "Credential line", body: "Multi-platinum, Grammy-nominated songwriter, composer, producer, musician and sound engineer." },
+        { label: "Supporting copy", body: "From charting records to film, television and global brands, J Bowman creates sound with feeling, identity and lasting cultural impact." },
+        { label: "Process line", body: "Written. Played. Produced. Scored. Recorded. Mixed." },
+        { label: "Primary CTA", body: "Explore the work." },
+        { label: "Secondary CTA", body: "Start a project." },
+        { label: "Voice", body: "Assured, cultured, precise and human. Lead with creative value and emotion; use credits as proof. Avoid generic studio language, inflated superlatives and nostalgia-led positioning." }
+      ],
+      architecture: [
+        { n: "01", label: "Home", body: "Immersive introduction, hero reel, positioning, selected work, discipline pathways, cultural proof and direct enquiry." },
+        { n: "02", label: "Work", body: "Filterable portfolio organised around Records, Picture and Brands/Culture — not a chronological archive." },
+        { n: "03", label: "Project", body: "Individual case-study template with media, brief, idea, J Bowman's precise role, collaborators, outcome and related work." },
+        { n: "04", label: "About", body: "Concise current biography, portraiture, career arc, selected collaborators and a link to the full credit index." },
+        { n: "05", label: "Services", body: "Clear commissioning pathways for Original Composition, Songwriting, Production, Engineering & Mix, Performance and Sonic/Creative Collaboration." },
+        { n: "06", label: "Archive / Journal", body: "Curated stories, process, artefacts, observations and selected historic material framed through a present-day perspective." },
+        { n: "07", label: "Contact", body: "Short project enquiry with direct email alternative, representation details if applicable and links to professional channels." },
+        { n: "08", label: "Listening room", body: "Optional. A curated, rights-cleared collection of musical fragments, themes, alternate versions and experiments presented as an editorial experience." }
+      ],
+      workTiles: [
+        { img: "assets/stage-green-j.png", title: "Sound of Sunshine", role: "Composer · Guitar · Mix" },
+        { img: "assets/desert-square.jpg", title: "Paramount / Skydance", role: "Composer · Producer" },
+        { img: "assets/frame-c.jpg", title: "Say Hey (I Love You)", role: "Engineer · Guitar · Mix" },
+        { img: "assets/live-collab-j.png", title: "Live · Franti & Spearhead", role: "Guitarist" },
+        { img: "assets/frame-f.jpg", title: "A2 Milk", role: "Composer · Sync" },
+        { img: "assets/seated-j.jpg", title: "Prolonging the Magic", role: "Engineer" }
+      ],
+      proofRows: [
+        { title: "Say Hey (I Love You)", detail: "#18 Billboard Hot 100", role: "Engineer · Guitar · Mix" },
+        { title: "Sound of Sunshine", detail: "#1 Adult Alternative", role: "Composer · Mix" },
+        { title: "Prolonging the Magic · Cake", detail: "#33 Billboard 200", role: "Engineer" },
+        { title: "Paramount / Skydance", detail: "Film, TV, multimedia", role: "Composer · Producer" }
+      ],
+      disciplines: [
+        { label: "Original composition", body: "Score and original music for film, television, advertising and branded work.", cta: "Brief a score →" },
+        { label: "Records", body: "Songwriting, production, performance, engineering and mix for artists and labels.", cta: "Start a record →" },
+        { label: "Brands & culture", body: "Sonic identity, campaign music, fashion film, runway and installation sound.", cta: "Talk brand sound →" }
+      ],
+      portfolio: [
+        { label: "Selection", body: "Launch with 6–10 hero projects. Choose for relevance, range, recognisability, visual material and clarity of J Bowman's contribution — not fame alone." },
+        { label: "Case-study fields", body: "Project title; client/artist; year; category; brief or context; creative idea; J Bowman's role; collaborators; audio/video; outcome; credits; related work." },
+        { label: "Role clarity", body: "Use explicit role tags such as Songwriter, Composer, Producer, Engineer, Mixer, Guitarist or Sync. Do not imply authorship beyond the documented contribution." },
+        { label: "Media", body: "Prioritise embedded video, high-quality audio, full-screen stills, annotated process materials and short written context. Provide captions and transcripts where relevant." },
+        { label: "Rights", body: "Every asset must be rights-cleared. Establish an approval register for music, stems, video, stills, logos, press quotes, client names and collaborator references before publication." }
+      ],
+      content: [
+        { label: "Copy", body: "Homepage copy; short and long biographies; discipline descriptions; 6–10 project summaries; 3–5 full case studies; enquiry prompts; metadata; privacy and terms." },
+        { label: "Photography", body: "One art-directed portrait and studio shoot covering hero landscape, portrait, close detail, negative-space crops, vertical social and monochrome options." },
+        { label: "Video", body: "Master reel, discipline-specific reel cuts, silent homepage loop, interview excerpts, studio process and vertical edits." },
+        { label: "Audio", body: "Rights-cleared stereo masters, consistent loudness, optional excerpts, waveform-free player design, track credits and accessible text alternatives." },
+        { label: "Archive", body: "Curated contact sheets, session images, handwritten material, studio artefacts, press and approved historic footage. Use selectively and contextualise in the present." },
+        { label: "Credits database", body: "A searchable or filterable full-credit index can sit below the editorial portfolio, keeping depth available without overwhelming the primary journey." }
+      ],
+      visual: [
+        { label: "Typography", body: "An expressive editorial display face paired with a highly legible contemporary sans serif. J BOWMAN must hold authority without decorative music references." },
+        { label: "Palette", body: "Black, bone, smoke and warm white, with one deep signature accent. The site must work beautifully in monochrome." },
+        { label: "Image", body: "Cinematic portraiture, deep shadows, imperfect crops, hard flash used sparingly, studio texture, contact sheets and present-day fashion composition." },
+        { label: "Graphic system", body: "Negative space, catalogue numbering, track metadata, modular frames, controlled grain and subtle editing or signal-flow references — without literal waveforms." },
+        { label: "Motion", body: "Slow confidence punctuated by sharp editorial cuts. Motion should support hierarchy and rhythm, never delay access or imitate a music visualiser." },
+        { label: "Fashion readiness", body: "Layouts and imagery should translate naturally into lookbooks, garment labels, campaign treatments, event screens and physical editions." }
+      ],
+      functional: [
+        { label: "CMS", body: "Simple management of projects, credits, categories, journal entries, media and featured content without developer assistance." },
+        { label: "Media performance", body: "Adaptive image and video delivery, poster frames, lazy loading, compressed audio and clear play controls. Protect Core Web Vitals and mobile performance." },
+        { label: "Filtering", body: "Work filters by discipline and project type, with human-readable URLs and no dead-end results." },
+        { label: "Enquiry", body: "Short form capturing name, organisation, email, project type, timing, budget range and message. Route submissions reliably and include spam protection." },
+        { label: "Analytics", body: "Privacy-conscious analytics for reel plays/completions, portfolio views, CTA clicks, enquiry starts/submissions, source channel and device." },
+        { label: "SEO", body: "Editable titles/descriptions, schema markup, Open Graph imagery, XML sitemap, canonical URLs, redirects, image alt text and indexable project copy." },
+        { label: "Social", body: "Platform-ready share cards, clean video thumbnails and consistent links to relevant professional profiles." }
+      ],
+      standards: [
+        { label: "Accessibility", body: "Target WCAG 2.2 AA: keyboard operation, visible focus, accessible contrast, scalable text, labelled controls, captions, transcripts, alt text and reduced-motion support." },
+        { label: "Sound", body: "No forced audio. Clearly visible play/pause, mute and volume controls. The complete site must remain understandable without sound." },
+        { label: "Privacy", body: "Collect only necessary enquiry information; publish a clear privacy notice; configure consent appropriately for analytics and embeds." },
+        { label: "Responsive", body: "Design and test mobile-first across current iOS/Android devices, tablets, laptops and large displays." },
+        { label: "Ownership", body: "J Bowman must retain access to the domain, CMS, analytics, hosting, source files, font and media licences, and all approved design assets." }
+      ],
+      search: [
+        { label: "Discovery themes", body: "J Bowman songwriter; composer for film and television; music producer; sound engineer; sync composer; custom music for brands; sonic identity; fashion film music." },
+        { label: "Authority content", body: "Publish selective case studies and editorial pieces that demonstrate process, role and creative thinking — not generic SEO articles." },
+        { label: "Outreach landing", body: "Create campaign-ready project URLs and, if required, tailored private or public landing pages for screen, brands, records and fashion." },
+        { label: "Cross-channel system", body: "Ensure website, LinkedIn, Vimeo/YouTube, social profiles, EPK, email signature and pitch materials use the same wordmark, headline, role language and project taxonomy." },
+        { label: "Lead capture", body: "Primary conversion is a qualified project enquiry. Newsletter capture is secondary and should only be used if there is a genuine editorial or release cadence." }
+      ],
+      agency: [
+        { label: "Strategy", body: "Discovery, competitor and category review, refined sitemap, audience journeys, content model, SEO framework and measurement plan." },
+        { label: "UX", body: "Wireframes for all core templates, mobile and desktop journeys, portfolio filtering, media behaviour and enquiry flow." },
+        { label: "UI", body: "High-fidelity responsive designs, component library, interaction and motion specifications, accessibility states and developer-ready source files." },
+        { label: "Development", body: "CMS build, front-end implementation, media optimisation, integrations, analytics, technical SEO, testing, redirects and launch support." },
+        { label: "Content support", body: "Content matrix, asset specifications, migration, copy population and clear identification of missing or uncleared material." },
+        { label: "Handover", body: "Training, documentation, source repository, licences, credentials, backups, warranty period and ongoing support options." }
+      ],
+      acceptance: [
+        { label: "Clarity", body: "A first-time visitor understands J Bowman's role, stature and creative offer within 30 seconds." },
+        { label: "Wordmark", body: "The master logo is J BOWMAN. \u201CMusic\u201D is never incorporated into the wordmark." },
+        { label: "Proof", body: "All published credits and roles have been verified and approved." },
+        { label: "Conversion", body: "Every core page provides a relevant next action and the enquiry process works across devices." },
+        { label: "Performance", body: "Media-rich pages remain fast, stable and usable on mobile connections." },
+        { label: "Accessibility", body: "Keyboard, screen-reader, contrast, caption, transcript and reduced-motion checks pass before launch." },
+        { label: "Control", body: "The owner can update projects, credits, media and editorial content without technical support." }
+      ],
+      decisions: [
+        { label: "Priority offer", body: "Rank the first-year focus: screen composition and sync; records and artist work; brands and sonic identity; culture and fashion collaboration." },
+        { label: "Public persona", body: "Confirm how visible J Bowman should be on camera and how much the experience should be personality-led versus work-led." },
+        { label: "Hero media", body: "Select whether launch leads with a new master reel, an original sonic/visual ident or a commissioned portrait film." },
+        { label: "Portfolio", body: "Approve launch projects and establish the exact role, rights and available media for each." },
+        { label: "Contact model", body: "Confirm direct contact, management or representation pathway and whether budget guidance is included in the form." },
+        { label: "Platform & hosting", body: "Agency to recommend based on editorial flexibility, media performance, owner control, security and total cost — not design preference alone." }
+      ],
+      phases: [
+        { n: "01", label: "Foundation", body: "Discovery, asset and rights audit, objectives, audience journeys, sitemap, content model and measurement plan." },
+        { n: "02", label: "Experience", body: "Messaging refinement, wireframes, portfolio architecture, content planning and technical definition." },
+        { n: "03", label: "Design", body: "Visual system, responsive interface, motion language, prototype and usability/accessibility review." },
+        { n: "04", label: "Build", body: "CMS development, integrations, content population, media optimisation, SEO and analytics implementation." },
+        { n: "05", label: "Launch", body: "Quality assurance, approvals, redirects, training, deployment and a coordinated reel/content/outreach release." },
+        { n: "06", label: "Growth", body: "Monthly content rhythm, performance reporting, conversion refinement, new case studies and targeted market landing pages." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

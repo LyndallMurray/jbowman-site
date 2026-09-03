@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Belleza&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0B0A0C; color: #F1ECE1; font-family: Montserrat, sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #B984B0; }
+  ::selection { background: #6E2A5C; color: #F1ECE1; }
+</style>
+</helmet>
+
+<div style="background:#0B0A0C; color:#F1ECE1; overflow-x:hidden">
+
+  <nav style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:2rem; padding:1rem 5vw; background:rgba(11,10,12,0.86); backdrop-filter:none; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <a href="#top" style="font-family:Belleza, sans-serif; font-size:0.9rem; letter-spacing:0.28em; text-transform:uppercase; white-space:nowrap">J Bowman</a>
+    <div style="display:flex; gap:1.75rem; font-size:0.62rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:rgba(241,236,225,0.55); flex-wrap:wrap; justify-content:flex-end">
+      <a href="#positioning" style-hover="color:#F1ECE1">01 Positioning</a>
+      <a href="#voice" style-hover="color:#F1ECE1">02 Voice</a>
+      <a href="#routes" style-hover="color:#F1ECE1">03 Routes</a>
+      <a href="#logo" style-hover="color:#F1ECE1">04 Logo</a>
+      <a href="#type" style-hover="color:#F1ECE1">05 Type</a>
+      <a href="#colour" style-hover="color:#F1ECE1">06 Colour</a>
+      <a href="#image" style-hover="color:#F1ECE1">07 Image</a>
+      <a href="#graphic" style-hover="color:#F1ECE1">08 Graphic</a>
+      <a href="#fashion" style-hover="color:#F1ECE1">09 Fashion</a>
+      <a href="#digital" style-hover="color:#F1ECE1">10 Digital</a>
+      <a href="#applications" style-hover="color:#F1ECE1">11 Applications</a>
+    </div>
+  </nav>
+
+  <header id="top" style="position:relative; minHeight:92vh; display:grid; gridTemplateColumns:1.1fr 0.9fr; alignItems:end; gap:0; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="padding:6rem 5vw 4rem; display:flex; flexDirection:column; gap:2.5rem; position:relative; zIndex:2">
+      <div style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">Sound that moves through culture.</div>
+      <h1 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(2.6rem, 6.4vw, 8rem); lineHeight:0.94; letterSpacing:0.03em; textTransform:uppercase; whiteSpace:nowrap">J Bowman</h1>
+      <div style="width:100%; height:1px; background:rgba(241,236,225,0.14)"></div>
+      <div style="display:flex; flexDirection:column; gap:1.5rem; maxWidth:34rem">
+        <p style="margin:0; fontSize:clamp(1.05rem,1.6vw,1.35rem); lineHeight:1.55; color:rgba(241,236,225,0.86)">Multi-platinum, Grammy-nominated songwriter, composer, producer, musician and sound engineer.</p>
+        <p style="margin:0; fontSize:clamp(0.95rem,1.3vw,1.1rem); lineHeight:1.7; color:rgba(241,236,225,0.7)">From charting records to film, television and global brands, J Bowman creates sound with feeling, identity and lasting cultural impact.</p>
+      </div>
+      <div style="display:flex; gap:2rem; flexWrap:wrap; fontSize:0.62rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">
+        <span>{{ descriptorLine }}</span>
+      </div>
+    </div>
+    <div style="position:relative; alignSelf:stretch; minHeight:60vh">
+      <img src="assets/portrait-hero-blend.png" alt="J Bowman portrait" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; objectPosition:center 20%; filter:grayscale(100%) contrast(1.08)" />
+      <div style="position:absolute; left:0; bottom:1.5rem; padding:0 1.5rem; fontFamily:Montserrat, sans-serif; fontStyle:italic; fontSize:0.85rem; color:rgba(241,236,225,0.85)">sound that moves through culture</div>
+    </div>
+  </header>
+
+  <section id="positioning" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:4rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">01</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Positioning</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(320px, 1fr)); gap:4rem 5rem">
+      <div style="display:flex; flexDirection:column; gap:2rem">
+        <div style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Brand essence</div>
+        <p style="margin:0; fontFamily:Belleza, sans-serif; fontSize:clamp(2rem,4vw,3.4rem); lineHeight:1.05; letterSpacing:0.02em">Sound that moves <em style="fontFamily:Montserrat, sans-serif; fontStyle:italic; fontSize:0.82em; color:#B984B0">through culture</em>.</p>
+        <p style="margin:0; maxWidth:32rem; fontSize:1rem; lineHeight:1.7; color:rgba(241,236,225,0.78)">J Bowman is an independent creative practice led by a multi-disciplinary music maker whose work moves between records, picture, brands and culture. He combines the instincts of a songwriter, the craft of an engineer and the perspective of a visual storyteller to create sound that carries identity.</p>
+        <div style="height:1px; background:rgba(241,236,225,0.14)"></div>
+        <p style="margin:0; maxWidth:32rem; fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.62)">The required shift: from respected talent known through credits and relationships to a visible creative auteur with a recognisable cultural signature.</p>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0">
+        <div style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5); paddingBottom:1.5rem">Brand pillars</div>
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="5">
+          <div style="display:grid; gridTemplateColumns:4rem 1fr; gap:1.5rem; padding:1.4rem 0; borderTop:1px solid rgba(241,236,225,0.14)">
+            <span style="fontFamily:Belleza, sans-serif; fontSize:0.8rem; letterSpacing:0.18em; color:#B984B0">{{ p.n }}</span>
+            <div style="display:flex; flexDirection:column; gap:0.5rem">
+              <span style="fontFamily:Belleza, sans-serif; fontSize:1.05rem; letterSpacing:0.16em; textTransform:uppercase">{{ p.name }}</span>
+              <span style="fontSize:0.9rem; lineHeight:1.6; color:rgba(241,236,225,0.66)">{{ p.body }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="marginTop:5rem; padding:3rem 0 0; borderTop:1px solid rgba(241,236,225,0.14); display:grid; gridTemplateColumns:repeat(auto-fit, minmax(240px,1fr)); gap:3rem">
+      <div style="display:flex; flexDirection:column; gap:0.9rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">Brand promise</span>
+        <span style="fontSize:1rem; lineHeight:1.6; color:rgba(241,236,225,0.86)">J Bowman finds the emotional frequency of an idea and makes it heard.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.9rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Primary audience</span>
+        <span style="fontSize:0.9rem; lineHeight:1.6; color:rgba(241,236,225,0.7)">Music supervisors, sync agencies, film and television producers, directors, advertising creatives, production companies and brand-side content teams.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.9rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Expansion audience</span>
+        <span style="fontSize:0.9rem; lineHeight:1.6; color:rgba(241,236,225,0.7)">Fashion houses, designers, photographers, creative directors, luxury and lifestyle brands, runway producers, experiential teams and cultural institutions.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.9rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Design test</span>
+        <span style="fontSize:0.9rem; lineHeight:1.6; color:rgba(241,236,225,0.7)">Could this identity sit confidently on a film title card, a record sleeve, a fashion label, a studio wall and a global campaign treatment without changing character?</span>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showCredits }}" hint-placeholder-val="{{ true }}">
+    <section style="padding:5rem 5vw; background:#111013; borderBottom:1px solid rgba(241,236,225,0.12); display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:3rem">
+      <div style="display:flex; flexDirection:column; gap:0.9rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Origin</span>
+        <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.75)">Began in Chicago. Relocated to the Bay Area when signed to write and record with producer Sandy Pearlman — The Clash, Black Sabbath, Blue Öyster Cult.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.9rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Collaborative orbit</span>
+        <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.75)">David Foster · Kanye West · Chris Isaak · 2Pac · Pink · Cake · Paul Rodgers · Dallas Austin · Don Was · Sam Hollander · George Clinton · Fatboy Slim · Thievery Corporation / Rob Garza</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.9rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Screen and broadcast</span>
+        <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.75)">Producing and composing for Paramount/Skydance. Compositions and syncs on The Late Show with Stephen Colbert, The Daily Show, CBS Mornings, CBS News RoundUp, NFL on CBS Sports, The View, Magnum PI, Hawaii Five-O and CMT Top 20 — plus Coco, Valentine's Day, Ida Red, Kiss Kiss Bang Bang, Yogi Bear, Hall Pass and Cutlass.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.9rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Commercial</span>
+        <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.75)">HBO · Showtime · Tylenol · Corona Beer · A2 Milk · Slim Fast · LCBO/Crown Agency · Vegas Golden Knights · Denver Broncos</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.9rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Records</span>
+        <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.75)">Engineer, guitarist and mixer on Say Hey (I Love You) — #18 Billboard Hot 100. Composer, guitarist, mixer and engineer on Sound of Sunshine — #1 Billboard Adult Alternative Songs. Six further Michael Franti &amp; Spearhead singles charting on Billboard AAA. Engineer on Cake's Prolonging the Magic — #33 Billboard 200.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.9rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">Verify before publication</span>
+        <span style="fontSize:0.92rem; lineHeight:1.7; color:rgba(241,236,225,0.6)">All names, roles, titles, chart positions, networks, studios and award language require checking against approved wording and cleared rights.</span>
+      </div>
+    </section>
+  </sc-if>
+
+  <section id="voice" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:4rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">02</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Personality &amp; voice</h2>
+    </div>
+    <p style="margin:0 0 4rem; fontFamily:Belleza, sans-serif; fontSize:clamp(1.6rem,3.6vw,2.9rem); lineHeight:1.15; letterSpacing:0.06em; textTransform:uppercase; maxWidth:38rem">Cultured. Exacting. Restless. Magnetic. Unforced.</p>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(280px,1fr)); gap:0 4rem">
+      <sc-for list="{{ feelings }}" as="f" hint-placeholder-count="5">
+        <div style="padding:1.8rem 0; borderTop:1px solid rgba(11,10,12,0.14); display:flex; flexDirection:column; gap:0.7rem">
+          <span style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ f.label }}</span>
+          <span style="fontSize:0.92rem; lineHeight:1.65; color:rgba(11,10,12,0.66)">{{ f.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="marginTop:5rem; display:grid; gridTemplateColumns:repeat(auto-fit, minmax(300px,1fr)); gap:4rem; paddingTop:3rem; borderTop:1px solid rgba(11,10,12,0.14)">
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Verbal style</span>
+        <p style="margin:0; fontSize:0.95rem; lineHeight:1.75; color:rgba(11,10,12,0.75)">Write in compact, assured language. Use sensory words connected to tension, tone, movement, texture and emotion. Lead with ideas and outcomes; let credits appear as proof. First person is preferred for process, belief and point of view. Third person is appropriate for biography, press and credentials.</p>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Avoid</span>
+        <p style="margin:0; fontSize:0.95rem; lineHeight:1.75; color:rgba(11,10,12,0.75)">Generic "full-service studio" language; long credit dumps on primary pages; nostalgia-first storytelling; genre clichés; overuse of "legendary," "iconic" or "visionary"; equal visual weight for every service; obvious waveform, headphone, guitar-pick or vinyl-record logos.</p>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Brand lines in play</span>
+        <div style="display:flex; flexDirection:column; gap:0.75rem; fontSize:0.95rem; lineHeight:1.5">
+          <span>01 &nbsp; Sound that moves through culture.</span>
+          <span>02 &nbsp; Sound with a point of view.</span>
+          <span>03 &nbsp; Find the pulse. Build the world.</span>
+          <span>04 &nbsp; Music for artists, picture and culture.</span>
+        </div>
+      </div>
+    </div>
+    <div style="marginTop:4rem; paddingTop:3rem; borderTop:1px solid rgba(11,10,12,0.14); display:grid; gridTemplateColumns:repeat(auto-fit, minmax(300px,1fr)); gap:4rem; alignItems:start">
+      <div style="display:flex; flexDirection:column; gap:1.4rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Tagline</span>
+        <p style="margin:0; fontFamily:Belleza, sans-serif; fontSize:clamp(1.8rem,4vw,3rem); lineHeight:1.1; letterSpacing:0.03em; textTransform:uppercase">Sound that moves <em style="fontFamily:Montserrat, sans-serif; fontStyle:italic; fontSize:0.82em; color:#6E2A5C; textTransform:none">through culture</em>.</p>
+        <span style="fontSize:0.9rem; lineHeight:1.7; color:rgba(11,10,12,0.7)">The line the identity runs on. It carries movement and reach in five words, holds across records, picture, brands and fashion, and needs no credit list behind it to make sense.</span>
+        <div style="height:1px; background:rgba(11,10,12,0.14)"></div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(11,10,12,0.5)">Descriptor</span>
+        <span style="fontSize:0.95rem; lineHeight:1.6; color:rgba(11,10,12,0.8)">Written. Played. Produced. Scored. Recorded. Mixed.</span>
+        <span style="fontSize:0.85rem; lineHeight:1.6; color:rgba(11,10,12,0.6)">Six words for the full span of the work — set tracked and uppercase beneath the wordmark, or run as a single line in credits and email signatures.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1.5rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(11,10,12,0.5)">Alternates</span>
+        <div style="display:flex; flexDirection:column; gap:1.4rem">
+          <div style="display:flex; flexDirection:column; gap:0.4rem">
+            <span style="fontFamily:Belleza, sans-serif; fontSize:1.3rem; letterSpacing:0.04em">Chicago instincts. Bay Area craft.</span>
+            <span style="fontSize:0.85rem; lineHeight:1.6; color:rgba(11,10,12,0.6)">Places the origin story in two beats. Strongest for press and biography, weaker for sync outreach.</span>
+          </div>
+          <div style="display:flex; flexDirection:column; gap:0.4rem">
+            <span style="fontFamily:Belleza, sans-serif; fontSize:1.3rem; letterSpacing:0.04em">Decades inside the record. One point of view.</span>
+            <span style="fontSize:0.85rem; lineHeight:1.6; color:rgba(11,10,12,0.6)">Converts the credit list into authority without naming a single collaborator. Pairs cleanly with the brand essence.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="routes" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:1.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">03</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Three routes</h2>
+    </div>
+    <p style="margin:0 0 4rem; maxWidth:40rem; fontSize:0.95rem; lineHeight:1.7; color:rgba(241,236,225,0.66)">Presented at moodboard level, with no single winner selected. Combine only after one strategic territory is chosen. The final system should have one dominant idea.</p>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(300px,1fr)); gap:2px; background:rgba(241,236,225,0.14)">
+      <sc-for list="{{ routes }}" as="r" hint-placeholder-count="3">
+        <div style="background:#0B0A0C; padding:0 0 2.5rem; display:flex; flexDirection:column">
+          <div style="position:relative; aspectRatio:4/5; overflow:hidden">
+            <img src="{{ r.img }}" alt="{{ r.name }}" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; filter:grayscale(100%) contrast(1.1); transition:filter 0.6s ease-in-out" style-hover="filter:grayscale(0%) contrast(1.05)" />
+            <div style="position:absolute; top:1.2rem; left:1.2rem; fontFamily:Belleza, sans-serif; fontSize:2.6rem; lineHeight:1; letterSpacing:0.06em; color:#F1ECE1; mixBlendMode:difference">{{ r.letter }}</div>
+          </div>
+          <div style="padding:2rem 1.6rem 0; display:flex; flexDirection:column; gap:1.2rem">
+            <span style="fontFamily:Belleza, sans-serif; fontSize:1.15rem; letterSpacing:0.16em; textTransform:uppercase">{{ r.name }}</span>
+            <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.68)">{{ r.body }}</span>
+            <div style="display:flex; gap:0.5rem; marginTop:0.4rem">
+              <span style="width:2.4rem; height:2.4rem; background:#0B0A0C; border:1px solid rgba(241,236,225,0.25)"></span>
+              <span style="width:2.4rem; height:2.4rem; background:{{ r.swatchA }}"></span>
+              <span style="width:2.4rem; height:2.4rem; background:{{ r.swatchB }}"></span>
+            </div>
+            <span style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.45)">{{ r.feel }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="logo" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:4rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">04</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Logo architecture</h2>
+    </div>
+    <div style="border:1px solid rgba(11,10,12,0.14); padding:clamp(2.5rem,7vw,6rem) 2rem; display:flex; flexDirection:column; alignItems:center; gap:1.4rem; background:#FBF8F3">
+      <div style="fontFamily:Belleza, sans-serif; fontSize:clamp(2.2rem,8vw,6.5rem); lineHeight:1; letterSpacing:0.16em; textTransform:uppercase">J Bowman</div>
+      <div style="width:min(70%, 30rem); height:1px; background:rgba(11,10,12,0.2)"></div>
+      <div style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.34em; textTransform:uppercase; color:rgba(11,10,12,0.6)">{{ descriptorLine }}</div>
+    </div>
+    <p style="margin:1.2rem 0 4rem; fontSize:0.72rem; fontWeight:500; letterSpacing:0.16em; textTransform:uppercase; color:rgba(11,10,12,0.5)">Primary wordmark · utility lockup with approved descriptor</p>
+
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(240px,1fr)); gap:2rem">
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:1/1; border:1px solid rgba(11,10,12,0.14); display:flex; alignItems:center; justifyContent:center; background:#0B0A0C; color:#F1ECE1">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(3rem,7vw,5rem); letterSpacing:0.08em">{{ monogramMark }}</span>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(11,10,12,0.55)">Monogram · avatars, garment labels, equipment, stamps, motion signature</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:1/1; border:1px solid rgba(11,10,12,0.14); display:flex; flexDirection:column; alignItems:center; justifyContent:center; gap:0.5rem; padding:1.5rem; textAlign:center">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(1.1rem,2.4vw,1.7rem); letterSpacing:0.18em; textTransform:uppercase">J Bowman</span>
+          <span style="fontSize:0.55rem; fontWeight:500; letterSpacing:0.24em; textTransform:uppercase; color:#6E2A5C">Independent creative practice</span>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(11,10,12,0.55)">Entity lockup · imprint, contracts — the word Music never joins the wordmark</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:1/1; border:1px solid rgba(11,10,12,0.14); display:flex; alignItems:center; justifyContent:center; padding:1.5rem">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(0.9rem,1.8vw,1.25rem); letterSpacing:0.2em; textTransform:uppercase">J Bowman</span>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(11,10,12,0.55)">Secondary mark · where the individual, not the entity, is the story</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:1/1; border:1px solid rgba(11,10,12,0.14); display:flex; flexDirection:column; justifyContent:flex-end; gap:0.8rem; padding:1.5rem; background:#6E2A5C; color:#F1ECE1">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(1.4rem,3vw,2.2rem); letterSpacing:0.12em; textTransform:uppercase">J Bowman</span>
+          <span style="fontSize:0.55rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; opacity:0.75">Motion / sonic ident end frame</span>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(11,10,12,0.55)">2–4 second ident, with silent motion-only alternative</span>
+      </div>
+    </div>
+
+    <div style="marginTop:4rem; paddingTop:3rem; borderTop:1px solid rgba(11,10,12,0.14); display:grid; gridTemplateColumns:repeat(auto-fit, minmax(220px,1fr)); gap:3rem">
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Clear space</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.7)">Minimum clear space on all sides equals the cap height of the J. Nothing crosses it — no type, rule, image edge or crop mark.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Minimum sizes</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.7)">Wordmark: 24 mm print, 120 px screen. Monogram: 12 mm woven label, 32 px avatar. Below wordmark minimum, use the monogram.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Misuse</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.7)">Do not restack, condense, outline, add effects, place over busy image areas, respace the tracking, or pair with waveform, headphone or vinyl symbols.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Master brand ruling</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.7)">Settled: the master wordmark is J BOWMAN. The word Music is never incorporated into the logo or wordmark, in any lockup or at any scale.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="type" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:4rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">05</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Typography</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(320px,1fr)); gap:4rem 5rem">
+      <div style="display:flex; flexDirection:column; gap:1.6rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Display · Belleza</span>
+        <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(3rem,7vw,6rem); lineHeight:0.95; letterSpacing:0.06em; textTransform:uppercase">Aa Bb Jj</span>
+        <span style="fontFamily:Belleza, sans-serif; fontSize:1.2rem; letterSpacing:0.14em; textTransform:uppercase; color:rgba(241,236,225,0.7)">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</span>
+        <span style="fontSize:0.9rem; lineHeight:1.7; color:rgba(241,236,225,0.66)">Single weight, set uppercase and tracked 0.10–0.18em. Editorial silhouette with a hand-cut flare. Used for the wordmark, section headings and title cards. Never set as body copy.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1.6rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Information · Montserrat</span>
+        <span style="fontSize:clamp(2.4rem,5vw,4rem); fontWeight:300; lineHeight:1">Aa Bb Jj <em style="fontStyle:italic; color:#B984B0">Jj</em></span>
+        <div style="display:flex; flexDirection:column; gap:0.9rem; fontSize:0.9rem; color:rgba(241,236,225,0.72)">
+          <span style="fontWeight:300">Light 300 — long-form prose, credits, captions</span>
+          <span style="fontWeight:500">Medium 500 — eyebrows, buttons, metadata, lower thirds</span>
+          <span style="fontWeight:400; fontStyle:italic">Italic — the one accent inside display lines, at 0.85em</span>
+        </div>
+        <span style="fontSize:0.9rem; lineHeight:1.7; color:rgba(241,236,225,0.66)">The contrast between upright Belleza and slanted Montserrat italic is the signature type moment. Use it once per composition, never twice.</span>
+      </div>
+    </div>
+    <div style="marginTop:4rem; paddingTop:3rem; borderTop:1px solid rgba(241,236,225,0.14); display:grid; gridTemplateColumns:repeat(auto-fit, minmax(200px,1fr)); gap:2.5rem 3rem">
+      <sc-for list="{{ typeScale }}" as="t" hint-placeholder-count="5">
+        <div style="display:flex; flexDirection:column; gap:0.5rem">
+          <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:#B984B0">{{ t.role }}</span>
+          <span style="fontSize:0.85rem; lineHeight:1.6; color:rgba(241,236,225,0.7)">{{ t.spec }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="colour" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:1.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">06</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Colour</h2>
+    </div>
+    <p style="margin:0 0 4rem; maxWidth:42rem; fontSize:0.95rem; lineHeight:1.7; color:rgba(11,10,12,0.7)">The system performs in pure black and white before colour is added. One signature colour carries the brand — a purple with red in it, warm enough to read as taste rather than costume, deep enough to hold its own on a leather label and a title card.</p>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(160px,1fr)); gap:2px; background:rgba(11,10,12,0.14); marginBottom:4rem">
+      <sc-for list="{{ neutrals }}" as="c" hint-placeholder-count="5">
+        <div style="background:#F1ECE1; padding:0">
+          <div style="height:9rem; background:{{ c.hex }}"></div>
+          <div style="padding:1rem 0.9rem 1.4rem; display:flex; flexDirection:column; gap:0.35rem">
+            <span style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.18em; textTransform:uppercase">{{ c.name }}</span>
+            <span style="fontSize:0.68rem; letterSpacing:0.12em; color:rgba(11,10,12,0.5)">{{ c.hex }}</span>
+            <span style="fontSize:0.72rem; lineHeight:1.5; color:rgba(11,10,12,0.55)">{{ c.use }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C; marginBottom:1.5rem">Getting the purple right — three candidates</div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:2rem">
+      <sc-for list="{{ purples }}" as="p" hint-placeholder-count="3">
+        <div style="border:1px solid rgba(11,10,12,0.14); display:flex; flexDirection:column">
+          <div style="height:11rem; background:{{ p.hex }}; display:flex; alignItems:flex-end; padding:1.2rem">
+            <span style="fontFamily:Belleza, sans-serif; fontSize:1.4rem; letterSpacing:0.16em; textTransform:uppercase; color:#F1ECE1">J Bowman</span>
+          </div>
+          <div style="display:flex">
+            <div style="flex:1; height:2.5rem; background:{{ p.deep }}"></div>
+            <div style="flex:1; height:2.5rem; background:{{ p.tint }}"></div>
+          </div>
+          <div style="padding:1.4rem 1.2rem; display:flex; flexDirection:column; gap:0.6rem">
+            <div style="display:flex; justifyContent:space-between; alignItems:baseline; gap:1rem">
+              <span style="fontSize:0.68rem; fontWeight:500; letterSpacing:0.18em; textTransform:uppercase">{{ p.name }}</span>
+              <span style="fontSize:0.66rem; letterSpacing:0.1em; color:rgba(11,10,12,0.5)">{{ p.hex }}</span>
+            </div>
+            <span style="fontSize:0.85rem; lineHeight:1.6; color:rgba(11,10,12,0.65)">{{ p.body }}</span>
+            <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.18em; textTransform:uppercase; color:#6E2A5C">{{ p.verdict }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="marginTop:3rem; paddingTop:2.5rem; borderTop:1px solid rgba(11,10,12,0.14); display:grid; gridTemplateColumns:repeat(auto-fit, minmax(240px,1fr)); gap:3rem">
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Recommendation</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.7)">Bruised Plum as the single signature. It reads violet on screen, oxblood in low light and holds pigment in thread and ink. Sign it off only after a physical test: woven label, screen print on black, foil on paper.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Ratio</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.7)">Ink and bone carry roughly 90% of any composition. The signature appears as a mark, a hairline, a single word, or one full-bleed moment per piece — never as a background for text-heavy layouts.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#6E2A5C">Accessibility</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.7)">Bone on Bruised Plum and Bruised Plum on Bone both clear 4.5:1. Never set Orchid Ash type on Bone, or Bruised Plum type on Ink.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="image" style="borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="padding:8rem 5vw 4rem">
+      <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:1.5rem">
+        <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">07</span>
+        <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Image world</h2>
+      </div>
+      <p style="margin:0; maxWidth:42rem; fontSize:0.95rem; lineHeight:1.7; color:rgba(241,236,225,0.7)">Cinematic portraiture; close detail of hands, instruments, tape, circuitry and worn studio surfaces; contact sheets; imperfect crops; hard flash used sparingly; deep shadows; fashion-editorial composition; fragments of notation and process. Balance present-day portraits with a tightly curated archive. Never allow the archive to make the brand feel retrospective.</p>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(180px,1fr)); gap:2px; background:rgba(241,236,225,0.14)">
+      <sc-for list="{{ contactSheet }}" as="s" hint-placeholder-count="8">
+        <figure style="margin:0; position:relative; aspectRatio:1/1; overflow:hidden; background:#0B0A0C">
+          <img src="{{ s.img }}" alt="{{ s.cap }}" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; filter:grayscale(100%) contrast(1.1); transition:filter 0.6s ease-in-out" style-hover="filter:grayscale(0%)" />
+          <span style="position:absolute; inset:0; background:linear-gradient(to top, rgba(11,10,12,0.85) 0%, rgba(11,10,12,0.35) 22%, rgba(11,10,12,0) 45%); pointerEvents:none"></span>
+          <figcaption style="position:absolute; left:0; bottom:0; padding:0.7rem 0.8rem; fontSize:0.55rem; fontWeight:500; letterSpacing:0.18em; textTransform:uppercase; color:rgba(241,236,225,0.8)">{{ s.cap }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+    <p style="margin:0; padding:1rem 5vw 0; fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.4)">Reference frames only · rights not cleared · replace with commissioned photography before publication</p>
+    <div style="padding:4rem 5vw 8rem; display:grid; gridTemplateColumns:repeat(auto-fit, minmax(240px,1fr)); gap:3rem">
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">Treatment</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.7)">Grayscale by default, high contrast, restrained grain. Colour is earned — reserved for one hero frame per story. Live colour gels may stay, but only where they read as light, not as filter.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">Crop</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.7)">Crop past the comfortable edge. Hands, strings, jaw, cable, tattoo. A tight fragment beside a full figure builds the rhythm.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">Overlay type</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.7)">Lower-left, Montserrat italic, lower case, small. One phrase only. Metadata in medium 500 caps sits opposite.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:0.8rem">
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.22em; textTransform:uppercase; color:#B984B0">To commission</span>
+        <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.7)">One art-directed portrait and studio shoot producing stills, vertical video, process footage, clean interview audio and detail shots in a single production.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="graphic" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:4rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">08</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Graphic language</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(280px,1fr)); gap:3rem; alignItems:start">
+      <div style="display:flex; flexDirection:column; gap:1.2rem">
+        <div style="aspectRatio:4/3; border:1px solid rgba(11,10,12,0.16); position:relative; background:#FBF8F3">
+          <span style="position:absolute; top:0.8rem; left:0.8rem; width:0.9rem; height:1px; background:rgba(11,10,12,0.4)"></span>
+          <span style="position:absolute; top:0.8rem; left:0.8rem; width:1px; height:0.9rem; background:rgba(11,10,12,0.4)"></span>
+          <span style="position:absolute; bottom:0.8rem; right:0.8rem; width:0.9rem; height:1px; background:rgba(11,10,12,0.4)"></span>
+          <span style="position:absolute; bottom:0.8rem; right:0.8rem; width:1px; height:0.9rem; background:rgba(11,10,12,0.4)"></span>
+          <span style="position:absolute; inset:0; display:flex; alignItems:center; justifyContent:center; fontFamily:Belleza, sans-serif; fontSize:1.1rem; letterSpacing:0.2em; textTransform:uppercase; color:rgba(11,10,12,0.55)">Crop marks</span>
+        </div>
+        <span style="fontSize:0.85rem; lineHeight:1.6; color:rgba(11,10,12,0.65)">Modular frames and crop marks give every layout the feel of a proof sheet rather than a poster.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1.2rem">
+        <div style="aspectRatio:4/3; border:1px solid rgba(11,10,12,0.16); background:#FBF8F3; padding:1.2rem; display:flex; flexDirection:column; justifyContent:space-between">
+          <div style="display:flex; justifyContent:space-between; fontSize:0.55rem; fontWeight:500; letterSpacing:0.18em; textTransform:uppercase; color:rgba(11,10,12,0.55)"><span>JBM—014</span><span>B / 03</span></div>
+          <div style="display:flex; flexDirection:column; gap:0.4rem; fontSize:0.6rem; letterSpacing:0.14em; textTransform:uppercase; color:rgba(11,10,12,0.7)">
+            <span>Composition · Guitar · Mix</span>
+            <span>Stereo · 96/24 · 03:41</span>
+          </div>
+          <div style="height:1px; background:rgba(11,10,12,0.16)"></div>
+        </div>
+        <span style="fontSize:0.85rem; lineHeight:1.6; color:rgba(11,10,12,0.65)">Catalogue numbering and track metadata carry information with no decoration. Every asset can be numbered.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1.2rem">
+        <div style="aspectRatio:4/3; border:1px solid rgba(11,10,12,0.16); background:#0B0A0C; display:grid; gridTemplateColumns:repeat(8, 1fr); alignItems:end; padding:1.2rem; gap:0.35rem">
+          <span style="height:22%; background:rgba(241,236,225,0.25)"></span>
+          <span style="height:62%; background:rgba(241,236,225,0.25)"></span>
+          <span style="height:12%; background:rgba(241,236,225,0.25)"></span>
+          <span style="height:84%; background:#6E2A5C"></span>
+          <span style="height:38%; background:rgba(241,236,225,0.25)"></span>
+          <span style="height:8%; background:rgba(241,236,225,0.25)"></span>
+          <span style="height:54%; background:rgba(241,236,225,0.25)"></span>
+          <span style="height:28%; background:rgba(241,236,225,0.25)"></span>
+        </div>
+        <span style="fontSize:0.85rem; lineHeight:1.6; color:rgba(11,10,12,0.65)">Rhythm informed by bars, cuts, layers and silence — structural, abstract, never a literal waveform.</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1.2rem">
+        <div style="aspectRatio:4/3; border:1px solid rgba(11,10,12,0.16); background:#FBF8F3; display:flex; alignItems:center; justifyContent:center; overflow:hidden">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(2.5rem,7vw,4.5rem); letterSpacing:0.1em; textTransform:uppercase; color:rgba(11,10,12,0.09)">Negative space</span>
+        </div>
+        <span style="fontSize:0.85rem; lineHeight:1.6; color:rgba(11,10,12,0.65)">Silence is a graphic device. Oversized type at low opacity, wide margins, and one element per field.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="fashion" style="borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="padding:8rem 5vw 4rem; display:grid; gridTemplateColumns:repeat(auto-fit, minmax(300px,1fr)); gap:4rem; alignItems:start">
+      <div>
+        <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:1.5rem">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">09</span>
+          <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Fashion extension</h2>
+        </div>
+        <p style="margin:0 0 2rem; fontFamily:Belleza, sans-serif; fontSize:clamp(1.3rem,2.6vw,2rem); lineHeight:1.25; letterSpacing:0.04em">Build a cultural label that can make objects — not a musician's merch range.</p>
+        <p style="margin:0; fontSize:0.95rem; lineHeight:1.7; color:rgba(241,236,225,0.7)">Fashion is designed into the identity from the beginning through scale, placement, materials and restraint. The system must work at 12 mm on a woven label, oversized across a back print, blind embossed into leather, stitched tonally into a cap and applied to packaging without losing integrity.</p>
+      </div>
+      <div style="display:flex; flexDirection:column">
+        <sc-for list="{{ fashionPhases }}" as="f" hint-placeholder-count="4">
+          <div style="padding:1.5rem 0; borderTop:1px solid rgba(241,236,225,0.14); display:flex; flexDirection:column; gap:0.6rem">
+            <span style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ f.label }}</span>
+            <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.66)">{{ f.body }}</span>
+          </div>
+        </sc-for>
+        <div style="padding:1.5rem 0 0; borderTop:1px solid rgba(241,236,225,0.14)">
+          <span style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:#B984B0">Guardrail</span>
+          <p style="margin:0.6rem 0 0; fontSize:0.9rem; lineHeight:1.65; color:rgba(241,236,225,0.66)">Use fewer, better pieces. Prioritise fabric, cut, construction and finish. Any product should be desirable to someone who has never heard the music.</p>
+        </div>
+      </div>
+    </div>
+    <div style="padding:0 5vw 8rem; display:grid; gridTemplateColumns:repeat(auto-fit, minmax(200px,1fr)); gap:2rem">
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:3/2; background:#151318; border:1px solid rgba(241,236,225,0.14); display:flex; alignItems:center; justifyContent:center">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:0.6rem; letterSpacing:0.3em; textTransform:uppercase; color:rgba(241,236,225,0.55); border:1px solid rgba(241,236,225,0.3); padding:0.35rem 0.6rem">JB</span>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Woven label · 12 mm · tonal</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:3/2; background:#0B0A0C; border:1px solid rgba(241,236,225,0.14); display:flex; alignItems:center; justifyContent:center; overflow:hidden">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(1.2rem,3.5vw,2.2rem); letterSpacing:0.14em; textTransform:uppercase; color:#F1ECE1">J Bowman</span>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Back print · oversized · single colour</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:3/2; background:#6E2A5C; display:flex; alignItems:flex-end; justifyContent:flex-start; padding:1rem">
+          <span style="fontSize:0.55rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.85)">Edition 014 / 100</span>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Numbered edition certificate</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:3/2; background:#151318; border:1px solid rgba(241,236,225,0.14); display:flex; alignItems:center; justifyContent:center">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:1.6rem; letterSpacing:0.12em; color:rgba(241,236,225,0.14)">JB</span>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Blind emboss · leather · no ink</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="digital" style="padding:8rem 5vw; background:#F1ECE1; color:#0B0A0C; borderBottom:1px solid rgba(11,10,12,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:1.5rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#6E2A5C">10</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Digital wrap</h2>
+    </div>
+    <p style="margin:0 0 4rem; maxWidth:42rem; fontSize:0.95rem; lineHeight:1.7; color:rgba(11,10,12,0.7)">A premium portfolio and an active commissioning engine. Every channel answers four questions quickly: who is J Bowman, what can he create, why trust him, and how do I start a conversation?</p>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(260px,1fr)); gap:0 4rem">
+      <sc-for list="{{ digital }}" as="d" hint-placeholder-count="6">
+        <div style="padding:1.8rem 0; borderTop:1px solid rgba(11,10,12,0.14); display:flex; flexDirection:column; gap:0.7rem">
+          <span style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase">{{ d.label }}</span>
+          <span style="fontSize:0.9rem; lineHeight:1.65; color:rgba(11,10,12,0.66)">{{ d.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="applications" style="padding:8rem 5vw; borderBottom:1px solid rgba(241,236,225,0.12)">
+    <div style="display:flex; alignItems:baseline; gap:1.5rem; marginBottom:4rem">
+      <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.2em; color:#B984B0">11</span>
+      <h2 style="margin:0; fontFamily:Belleza, sans-serif; fontWeight:400; fontSize:clamp(1.8rem,3.4vw,3rem); letterSpacing:0.1em; textTransform:uppercase">Applications</h2>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(auto-fit, minmax(300px,1fr)); gap:3rem">
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:16/9; background:#0B0A0C; border:1px solid rgba(241,236,225,0.14); position:relative; overflow:hidden; display:flex; alignItems:center; justifyContent:center">
+          <img src="assets/desert-square.jpg" alt="Title card" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; opacity:0.2; filter:grayscale(100%) brightness(0.55)" />
+          <span style="position:absolute; inset:0; background:rgba(11,10,12,0.55); pointerEvents:none"></span>
+          <div style="position:relative; display:flex; flexDirection:column; alignItems:center; gap:0.8rem">
+            <span style="fontFamily:Belleza, sans-serif; fontSize:clamp(1.2rem,3vw,2.2rem); letterSpacing:0.2em; textTransform:uppercase">J Bowman</span>
+            <span style="width:5rem; height:1px; background:rgba(241,236,225,0.4)"></span>
+            <span style="fontSize:0.5rem; fontWeight:500; letterSpacing:0.3em; textTransform:uppercase; color:rgba(241,236,225,0.7)">Original score</span>
+          </div>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Film title card · centred, tracked, one rule</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:16/9; border:1px solid rgba(241,236,225,0.14); position:relative; overflow:hidden">
+          <img src="assets/live-green.jpg" alt="Reel lower third" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; filter:grayscale(100%) contrast(1.1)" />
+          <span style="position:absolute; inset:0; background:linear-gradient(to top, rgba(11,10,12,0.9) 0%, rgba(11,10,12,0.5) 30%, rgba(11,10,12,0) 60%); pointerEvents:none"></span>
+          <div style="position:absolute; left:1.2rem; bottom:1.2rem; display:flex; flexDirection:column; gap:0.4rem; borderLeft:1px solid #B984B0; paddingLeft:0.9rem">
+            <span style="fontSize:0.62rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:#F1ECE1">Composition · Guitar · Mix</span>
+            <span style="fontSize:0.55rem; letterSpacing:0.16em; textTransform:uppercase; color:rgba(241,236,225,0.7)">JBM—014 · Records</span>
+          </div>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Showreel lower third · role always captioned</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:1/1; border:1px solid rgba(241,236,225,0.14); position:relative; overflow:hidden; background:#0B0A0C">
+          <img src="assets/frame-c.jpg" alt="Social post" style="position:absolute; inset:0; width:100%; height:100%; objectFit:cover; filter:grayscale(100%) contrast(1.1)" />
+          <span style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(11,10,12,0.7) 0%, rgba(11,10,12,0.15) 30%, rgba(11,10,12,0.15) 62%, rgba(11,10,12,0.85) 100%); pointerEvents:none"></span>
+          <div style="position:absolute; inset:0; display:flex; flexDirection:column; justifyContent:space-between; padding:1.2rem">
+            <span style="fontSize:0.55rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.85)">Process · 03</span>
+            <span style="fontStyle:italic; fontSize:0.95rem; color:#F1ECE1">find the pulse</span>
+          </div>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Social square · metadata top, italic phrase bottom</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:1rem">
+        <div style="aspectRatio:16/9; background:#F1ECE1; color:#0B0A0C; padding:1.5rem; display:flex; flexDirection:column; justifyContent:space-between">
+          <span style="fontFamily:Belleza, sans-serif; fontSize:1rem; letterSpacing:0.18em; textTransform:uppercase">J Bowman</span>
+          <div style="display:flex; flexDirection:column; gap:0.35rem; fontSize:0.6rem; letterSpacing:0.14em; textTransform:uppercase; color:rgba(11,10,12,0.65)">
+            <span>{{ descriptorLine }}</span>
+            <span>Capability deck · one-sheet · EPK</span>
+          </div>
+        </div>
+        <span style="fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">Outreach cover · bone, wordmark, descriptor</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:8rem 5vw 6rem; display:flex; flexDirection:column; gap:3rem; alignItems:flex-start">
+    <p style="margin:0; fontFamily:Belleza, sans-serif; fontSize:clamp(1.6rem,4.5vw,3.6rem); lineHeight:1.1; letterSpacing:0.06em; textTransform:uppercase; maxWidth:34rem">Sound. Image. Material. Memory. Motion.</p>
+    <div style="height:1px; width:100%; background:rgba(241,236,225,0.14)"></div>
+    <div style="display:flex; justifyContent:space-between; gap:2rem; width:100%; flexWrap:wrap; fontSize:0.6rem; fontWeight:500; letterSpacing:0.2em; textTransform:uppercase; color:rgba(241,236,225,0.5)">
+      <span>Edited with discipline. Built for what comes next.</span>
+      <span>Confidential · September 2026</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;descriptor&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Writer · Composer · Producer · Musician · Sound Engineer&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Copy&quot;},&quot;monogram&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;JB&quot;,&quot;JBM&quot;],&quot;default&quot;:&quot;JB&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Identity&quot;},&quot;showCredits&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      descriptorLine: this.props.descriptor ?? "Writer · Composer · Producer · Musician · Sound Engineer",
+      monogramMark: this.props.monogram ?? "JB",
+      showCredits: this.props.showCredits ?? true,
+      pillars: [
+        { n: "01", name: "Authorship", body: "Original thinking, composition and a recognisable creative point of view." },
+        { n: "02", name: "Craft", body: "Deep technical knowledge across writing, performance, engineering, production and mix." },
+        { n: "03", name: "Cultural range", body: "Fluency across genres, eras, moving image, brands and contemporary creative culture." },
+        { n: "04", name: "Collaboration", body: "High-level experience without ego-led distance; responsive, intuitive and built around the work." },
+        { n: "05", name: "Reinvention", body: "An established artist actively creating what comes next, without trading on nostalgia." }
+      ],
+      feelings: [
+        { label: "Established, never dated", body: "The history provides authority. The expression remains current and future-facing." },
+        { label: "Premium, never polished empty", body: "Refinement should reveal texture, intelligence and lived experience." },
+        { label: "Artistic, never obscure", body: "Creative depth must still make services and pathways to commission immediately clear." },
+        { label: "Confident, never loud", body: "Let the body of work carry weight. Avoid inflated claims and self-mythology." },
+        { label: "Fashion-literate, never costumed", body: "The brand can enter fashion because it has taste, not because music symbols have been placed on merchandise." }
+      ],
+      routes: [
+        { letter: "A", name: "Editorial authority", img: "assets/desert-tall.jpg", body: "High contrast, black and bone, precise typography and cinematic portraiture. Feels like an independent fashion title or art-book imprint.", swatchA: "#F1ECE1", swatchB: "#6E2A5C", feel: "Restraint · scale · silence" },
+        { letter: "B", name: "Signal & texture", img: "assets/frame-f.jpg", body: "Modernist typography disrupted by controlled analogue marks, crops and layering. Feels technical, tactile and alive.", swatchA: "#3A3540", swatchB: "#8E2F6E", feel: "Layer · distortion · grain" },
+        { letter: "C", name: "Cultural archive", img: "assets/seated-j.jpg", body: "A contemporary identity built around cataloguing, contact sheets and selective historic material. Feels storied without becoming nostalgic.", swatchA: "#E3D9C6", swatchB: "#2B1226", feel: "Index · proof · sequence" }
+      ],
+      typeScale: [
+        { role: "Display 1", spec: "Belleza · clamp 3.4–8.5rem · tracking 0.04em · uppercase · line-height 0.92" },
+        { role: "Section heading", spec: "Belleza · 1.8–3rem · tracking 0.10em · uppercase" },
+        { role: "Lead", spec: "Montserrat 300 · 1.05–1.35rem · line-height 1.55" },
+        { role: "Body", spec: "Montserrat 300 · 0.9–1rem · line-height 1.7 · measure 32rem max" },
+        { role: "Eyebrow", spec: "Montserrat 500 · 0.6rem · tracking 0.22em · uppercase" },
+        { role: "Metadata", spec: "Montserrat 500 · 0.55rem · tracking 0.18em · uppercase" }
+      ],
+      neutrals: [
+        { name: "Ink", hex: "#0B0A0C", use: "Primary ground. Near-black with a violet cast." },
+        { name: "Smoke", hex: "#3A3540", use: "Secondary surface, dividers on dark, matte product." },
+        { name: "Bone", hex: "#F1ECE1", use: "Primary light ground and type on ink." },
+        { name: "Warm white", hex: "#FBF8F3", use: "Paper, print stock, framed fields." },
+        { name: "Shell", hex: "#E3D9C6", use: "Tertiary surface, packaging, archive pages." }
+      ],
+      purples: [
+        { name: "Bruised plum", hex: "#6E2A5C", deep: "#2B1226", tint: "#B984B0", body: "Violet with red underneath. Reads as taste on cream, as blood in low light. Holds in thread, ink and foil.", verdict: "Recommended lead" },
+        { name: "Iris", hex: "#4A2E86", deep: "#1E1440", tint: "#9B8CD6", body: "Cooler and more electric. Sharper on screen, more technical, closer to Route B. Loses warmth on textile.", verdict: "Alternate — screen-led" },
+        { name: "Ultra magenta", hex: "#96206A", deep: "#3D0C2B", tint: "#D98FB8", body: "Hotter and more overtly femme. Strong at small scale and on black, harder to keep premium at volume.", verdict: "Alternate — accent only" }
+      ],
+      contactSheet: [
+        { img: "assets/portrait-hero.jpg", cap: "Portrait · present day" },
+        { img: "assets/desert-square.jpg", cap: "Editorial · location" },
+        { img: "assets/live-collab-j.png", cap: "Live · collaboration" },
+        { img: "assets/frame-b.jpg", cap: "Stage · fragment" },
+        { img: "assets/frame-c.jpg", cap: "Performance" },
+        { img: "assets/desert-tall.jpg", cap: "Editorial · figure" },
+        { img: "assets/stage-green-j.png", cap: "Stage · gelled light" },
+        { img: "assets/frame-f.jpg", cap: "Process · location" }
+      ],
+      fashionPhases: [
+        { label: "Uniform", body: "Premium heavyweight tee, overshirt, cap and studio jacket using tonal embroidery, woven labels and small-format marks." },
+        { label: "Limited objects", body: "Numbered lyric or score prints, studio notebooks, record bags, scarves or patches tied to specific releases and collaborations." },
+        { label: "Collaborations", body: "Capsules with a designer, visual artist, photographer or material specialist. Each needs a creative reason beyond logo placement." },
+        { label: "Event / performance", body: "Wardrobe and environmental identity for listening sessions, screenings, showcases, installations and fashion presentations." }
+      ],
+      digital: [
+        { label: "Website", body: "Art-directed, mobile-first, opening on a reel. Work organised by Records, Picture and Brands. Concise about, selected credits, services, journal, enquiry." },
+        { label: "Showreels", body: "A 60–90 second master reel plus targeted cuts for film and television, advertising, records and fashion. Roles and outcomes always captioned." },
+        { label: "Case studies", body: "Brief, creative idea, role, process, result. Depth around a selective body of proof rather than every credit shown equally." },
+        { label: "Social", body: "A modular system for process, archive, current work, point of view, credits, collaborators, sonic experiments and culture references." },
+        { label: "Outreach", body: "Email signature, pitch deck, one-sheet, EPK, reel thumbnails, private project links and concise capability PDFs." },
+        { label: "Discovery", body: "Consistent metadata, service pages, tagged credits, LinkedIn positioning, reel architecture and rights-cleared portfolio descriptions." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
