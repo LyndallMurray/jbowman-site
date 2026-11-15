@@ -1,0 +1,175 @@
+/* ==========================================================================
+   J BOWMAN — jbowman.com
+   Page layout for the public site. Colour and type come from tokens.css.
+   Prefix: .s-
+
+   Three rules from the brand guidelines that this file enforces:
+     · One plum field per page. Headline and action only, never text-heavy.
+     · The Belleza + Montserrat-italic pairing appears ONCE per page.
+     · Images are grayscale by default; colour is earned, one frame per story.
+   ========================================================================== */
+
+/* --- Hero ---------------------------------------------------------------- */
+
+.s-hero {
+  position: relative; min-height: calc(100svh - var(--nav-h));
+  display: grid; align-items: center; overflow: hidden;
+  padding: clamp(3rem, 8vh, 7rem) var(--gutter);
+}
+.s-hero__media { position: absolute; inset: 0 0 0 auto; width: clamp(20rem, 58%, 62rem); z-index: 0; }
+.s-hero__media img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 16%;
+  filter: grayscale(100%) contrast(1.06);
+  /* The portrait is square: full-bleed on a wide hero fills the width exactly
+     and object-position stops working horizontally, putting the face under the
+     headline. Held right, with a feathered edge, it reads as a photograph. */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 30%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 30%);
+}
+.s-hero__media::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, var(--ink) 0%, rgba(11,10,12,0.55) 34%, rgba(11,10,12,0.08) 70%, rgba(11,10,12,0.45) 100%),
+    linear-gradient(to top, var(--ink) 0%, rgba(11,10,12,0) 42%);
+}
+.s-hero__inner {
+  position: relative; z-index: 1; max-width: 46rem;
+  display: flex; flex-direction: column; gap: clamp(1.4rem, 3vw, 2.2rem);
+}
+/* J BOWMAN is one mark on one line at every width. Never allowed to break. */
+.s-hero__mark { white-space: nowrap; font-size: clamp(2.5rem, 9vw, 9rem); }
+.s-hero__line { color: var(--orchid); }
+.s-hero__roles { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(241,236,225,0.74); }
+
+/* Interior pages: type only, no media. */
+.s-hero--page { min-height: 0; padding-block: clamp(5rem, 16vh, 11rem) clamp(3rem, 8vh, 6rem); }
+.s-hero--page .s-hero__inner { gap: 1.5rem; }
+.s-hero--page h1 { max-width: 20ch; }
+
+/* --- Statement ------------------------------------------------------------ */
+
+.s-statement { display: flex; flex-direction: column; gap: clamp(1.6rem, 3vw, 2.4rem); }
+
+/* --- Collaborator run ----------------------------------------------------- */
+
+.s-names {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem;
+  font-family: var(--display); font-size: clamp(1.05rem, 2.2vw, 1.85rem);
+  line-height: 1.35; letter-spacing: 0.03em;
+}
+.s-names li { display: flex; align-items: center; gap: 1.4rem; }
+.s-names li::after { content: "·"; color: var(--accent-on-ink); }
+.band--bone .s-names li::after, .on-bone .s-names li::after { color: var(--accent-on-bone); }
+.s-names li:last-child::after { content: ""; }
+
+/* --- Credit table --------------------------------------------------------- */
+/* Catalogue numbering, per the graphic language: every asset can be numbered. */
+
+.s-credits { display: flex; flex-direction: column; }
+.s-credit {
+  display: grid; grid-template-columns: 5rem minmax(0,1.5fr) minmax(0,1fr) minmax(0,1.1fr);
+  gap: 1.4rem; align-items: baseline;
+  padding: clamp(1.2rem, 2.3vw, 1.8rem) 0; border-top: 1px solid var(--rule-on-ink);
+}
+.band--bone .s-credit, .on-bone .s-credit { border-top-color: var(--rule-on-bone); }
+.s-credit:last-child { border-bottom: 1px solid var(--rule-on-ink); }
+.band--bone .s-credit:last-child, .on-bone .s-credit:last-child { border-bottom-color: var(--rule-on-bone); }
+.s-credit__cat { font-size: var(--meta-size); font-weight: 500; letter-spacing: var(--meta-track); text-transform: uppercase; color: rgba(241,236,225,0.58); }
+.band--bone .s-credit__cat, .on-bone .s-credit__cat { color: rgba(11,10,12,0.55); }
+.s-credit__title { font-family: var(--display); font-size: clamp(1.05rem, 1.8vw, 1.45rem); letter-spacing: 0.03em; }
+.s-credit__artist { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(241,236,225,0.68); }
+.band--bone .s-credit__artist, .on-bone .s-credit__artist { color: rgba(11,10,12,0.62); }
+.s-credit__roles { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-on-ink); }
+.band--bone .s-credit__roles, .on-bone .s-credit__roles { color: var(--accent-on-bone); }
+
+/* --- Tag run -------------------------------------------------------------- */
+
+.s-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; }
+.s-tags li { padding: 0.55rem 0.95rem; border: 1px solid var(--rule-on-ink); color: rgba(241,236,225,0.80); }
+.band--bone .s-tags li, .on-bone .s-tags li { border-color: var(--rule-on-bone); color: rgba(11,10,12,0.72); }
+
+/* --- Ruled list ----------------------------------------------------------- */
+
+.s-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 0 clamp(2rem, 4vw, 4rem); }
+.s-list li {
+  display: flex; align-items: baseline; gap: 1.1rem;
+  padding: clamp(1rem, 2vw, 1.4rem) 0; border-top: 1px solid var(--rule-on-ink);
+  font-family: var(--display); font-size: clamp(1.02rem, 1.7vw, 1.3rem); letter-spacing: 0.03em;
+}
+.band--bone .s-list li, .on-bone .s-list li { border-top-color: var(--rule-on-bone); }
+.s-list .n { font-size: 0.7rem; letter-spacing: 0.18em; color: var(--accent-on-ink); flex: none; }
+.band--bone .s-list .n, .on-bone .s-list .n { color: var(--accent-on-bone); }
+
+/* --- Plates (small originals, never upscaled) ----------------------------- */
+
+.s-plate--desert { max-width: 399px; }
+.s-plate--truck  { max-width: 518px; }
+.s-plate--stage  { max-width: 273px; }
+
+/* --- Form ----------------------------------------------------------------- */
+
+.s-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.8rem clamp(1.5rem, 3vw, 3rem); }
+.field { display: flex; flex-direction: column; gap: 0.55rem; }
+.field--full { grid-column: 1 / -1; }
+.field label { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(241,236,225,0.68); }
+.field .req { color: var(--accent-on-ink); }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 0.85rem 0; background: transparent; color: var(--bone);
+  border: 0; border-bottom: 1px solid rgba(241,236,225,0.3);
+  font-family: var(--sans); font-size: 0.98rem; font-weight: 300;
+  transition: border-color var(--quick) var(--ease);
+}
+.field textarea { resize: vertical; min-height: 7rem; line-height: 1.7; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-bottom-color: var(--orchid); }
+.field [aria-invalid="true"] { border-bottom-color: var(--orchid); }
+.field__error { font-size: 0.68rem; letter-spacing: 0.06em; color: var(--accent-on-ink); min-height: 1rem; }
+
+/* The form sits on a bone band. Every ink-ground colour above must be
+   restated here or the whole form renders bone-on-bone and disappears. */
+.band--bone .field label { color: rgba(11,10,12,0.62); }
+.band--bone .field .req, .band--bone .field__error { color: var(--accent-on-bone); }
+.band--bone .field input,
+.band--bone .field select,
+.band--bone .field textarea { color: var(--ink); border-bottom-color: rgba(11,10,12,0.3); }
+.band--bone .field select option { background: var(--bone); color: var(--ink); }
+.band--bone .field input:focus,
+.band--bone .field select:focus,
+.band--bone .field textarea:focus,
+.band--bone .field [aria-invalid="true"] { border-bottom-color: var(--plum); }
+.band--bone .field input::placeholder, .band--bone .field textarea::placeholder { color: rgba(11,10,12,0.35); }
+
+.form__actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem; }
+.form__status { font-size: 0.8rem; line-height: 1.6; color: rgba(241,236,225,0.78); }
+.form__status[data-tone="error"] { color: var(--accent-on-ink); }
+.band--bone .form__status { color: rgba(11,10,12,0.72); }
+.band--bone .form__status[data-tone="error"] { color: var(--accent-on-bone); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* --- Footer --------------------------------------------------------------- */
+
+.s-foot { padding: var(--band-y) var(--gutter) clamp(2.5rem, 5vw, 4rem); border-top: 1px solid var(--rule-on-ink); }
+.s-foot__mark { font-family: var(--display); font-size: clamp(2rem, 7vw, 5rem); letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; }
+.s-foot__line { margin-top: 0.9rem; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-on-ink); }
+.s-foot__grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.4rem 3rem; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.s-foot__nav, .s-foot__social { display: flex; flex-wrap: wrap; gap: 1.3rem; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; }
+.s-foot__nav a, .s-foot__social a { color: rgba(241,236,225,0.62); transition: color var(--quick) var(--ease); }
+.s-foot__nav a:hover, .s-foot__social a:hover { color: var(--bone); }
+/* Unconfigured profiles render as plain text — must still clear AA. */
+.s-foot__social span { color: rgba(241,236,225,0.58); }
+.s-foot__legal { margin-top: 2.4rem; font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(241,236,225,0.58); }
+
+/* --- Responsive ----------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+  .s-hero { min-height: 0; padding-block: clamp(3rem,10vh,5rem) clamp(3rem,8vh,5rem); }
+  .s-hero__media { inset: 0; width: 100%; }
+  .s-hero__media img { -webkit-mask-image: none; mask-image: none; object-position: center 10%; }
+  .s-hero__media::after { background: linear-gradient(to bottom, rgba(11,10,12,0.38) 0%, rgba(11,10,12,0.82) 54%, var(--ink) 100%); }
+  .s-hero__inner { max-width: none; }
+
+  .s-credit { grid-template-columns: 4.5rem minmax(0,1fr); gap: 0.4rem 1.1rem; }
+  .s-credit__artist, .s-credit__roles { grid-column: 2; }
+  .s-list { grid-template-columns: 1fr; }
+  .s-form { grid-template-columns: 1fr; }
+  .s-foot__grid { flex-direction: column; }
+}

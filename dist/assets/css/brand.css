@@ -1,0 +1,210 @@
+/* ==========================================================================
+   J BOWMAN — brand guidelines (/brand/)
+   Page-specific layout only. Colour and type come from tokens.css.
+   Prefix: .gl-
+   ========================================================================== */
+
+/* --- Hero ---------------------------------------------------------------- */
+
+.gl-hero {
+  position: relative;
+  min-height: calc(100svh - var(--nav-h));
+  display: grid; align-items: center;
+  padding: clamp(3rem, 8vh, 7rem) var(--gutter);
+  overflow: hidden;
+}
+.gl-hero__media { position: absolute; inset: 0 0 0 auto; width: clamp(20rem, 54%, 56rem); z-index: 0; }
+.gl-hero__media img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 16%;
+  filter: grayscale(100%) contrast(1.08);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 32%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 32%);
+}
+.gl-hero__media::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, var(--ink) 0%, rgba(11,10,12,0.55) 36%, rgba(11,10,12,0.08) 72%, rgba(11,10,12,0.45) 100%),
+    linear-gradient(to top, var(--ink) 0%, rgba(11,10,12,0) 42%);
+}
+.gl-hero__copy {
+  position: relative; z-index: 1; max-width: 44rem;
+  display: flex; flex-direction: column; gap: clamp(1.4rem, 3vw, 2.2rem);
+}
+/* The wordmark is one mark on one line, at every width. */
+.gl-hero__mark { white-space: nowrap; font-size: clamp(2.5rem, 9vw, 8.5rem); }
+
+/* --- Shared dividers ----------------------------------------------------- */
+
+.gl-divided {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--rule-on-ink);
+}
+.band--bone .gl-divided { border-top-color: var(--rule-on-bone); }
+
+.gl-essence { letter-spacing: 0.02em; }
+.gl-traits { max-width: 38rem; margin-bottom: clamp(2.5rem, 5vw, 4rem); letter-spacing: 0.06em; }
+
+.gl-lines { display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.95rem; }
+.gl-lines li { display: flex; gap: 1rem; align-items: baseline; }
+
+/* --- 03 Routes ----------------------------------------------------------- */
+
+.gl-routes { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1px; background: var(--rule-on-ink); }
+.gl-route { background: var(--ink); display: flex; flex-direction: column; }
+.gl-route .figure { background: var(--smoke); }
+.gl-route .figure img { transition: filter var(--slow) var(--ease); }
+.gl-route:hover .figure img { filter: grayscale(0%) contrast(1.02); }
+.gl-route__letter {
+  position: absolute; top: 1rem; left: 1.1rem;
+  font-family: var(--display); font-size: 2.6rem; line-height: 1;
+  letter-spacing: 0.06em; color: var(--bone); mix-blend-mode: difference;
+}
+.gl-route__body { padding: 1.6rem 1.4rem 2.2rem; }
+.gl-swatches { display: flex; gap: 0.5rem; margin-top: 0.4rem; }
+.gl-swatches span { width: 2.2rem; height: 2.2rem; display: block; }
+
+/* --- 04 Logo ------------------------------------------------------------- */
+
+.gl-lockup {
+  border: 1px solid var(--rule-on-bone); background: var(--warm-white);
+  padding: clamp(2.5rem, 7vw, 6rem) 2rem;
+  display: flex; flex-direction: column; align-items: center; gap: 1.3rem;
+}
+.gl-lockup__mark {
+  font-family: var(--display); font-size: clamp(2rem, 8vw, 6.5rem); line-height: 1;
+  letter-spacing: var(--wordmark-track); text-transform: uppercase; white-space: nowrap;
+}
+.gl-lockup__rule { width: min(70%, 30rem); height: 1px; background: rgba(11,10,12,0.2); }
+.gl-lockup__desc {
+  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(11,10,12,0.62); text-align: center;
+}
+
+.gl-marks { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: clamp(1.2rem, 2.5vw, 2rem); }
+.gl-mark {
+  aspect-ratio: 1/1; border: 1px solid var(--rule-on-bone);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 1.4rem; text-align: center;
+}
+.gl-mark--ink  { background: var(--ink); color: var(--bone); border-color: transparent; }
+.gl-mark--plum { background: var(--plum); color: var(--bone); border-color: transparent; justify-content: flex-end; align-items: flex-start; text-align: left; }
+.gl-mark__mono { font-family: var(--display); font-size: clamp(2.6rem, 7vw, 5rem); letter-spacing: 0.08em; }
+.gl-mark__word { font-family: var(--display); font-size: clamp(1.05rem, 2.2vw, 1.6rem); letter-spacing: 0.18em; text-transform: uppercase; }
+.gl-mark__word--small { font-size: clamp(0.9rem, 1.7vw, 1.2rem); letter-spacing: 0.2em; }
+
+/* --- 05 Type ------------------------------------------------------------- */
+
+.gl-specimen { font-family: var(--display); font-size: clamp(2.6rem, 7vw, 6rem); line-height: 0.95; letter-spacing: 0.06em; text-transform: uppercase; }
+.gl-specimen--sans { font-family: var(--sans); font-weight: 300; text-transform: none; letter-spacing: 0; }
+.gl-alphabet { font-family: var(--display); font-size: clamp(0.9rem, 1.6vw, 1.2rem); letter-spacing: 0.14em; text-transform: uppercase; color: rgba(241,236,225,0.72); }
+
+/* --- 06 Colour ----------------------------------------------------------- */
+
+.gl-swatch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1px; background: var(--rule-on-bone); }
+.gl-swatch { background: var(--bone); display: flex; flex-direction: column; gap: 0.3rem; padding-bottom: 1.3rem; }
+.gl-swatch__chip { display: block; height: 8.5rem; margin-bottom: 0.9rem; }
+.gl-swatch .card__body { font-size: 0.78rem; line-height: 1.5; }
+
+.gl-purples { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: clamp(1.2rem, 2.5vw, 2rem); margin-top: 1.4rem; }
+.gl-purple { border: 1px solid var(--rule-on-bone); display: flex; flex-direction: column; }
+.gl-purple__field { height: 10rem; display: flex; align-items: flex-end; padding: 1.1rem; }
+.gl-purple__mark { font-family: var(--display); font-size: 1.3rem; letter-spacing: var(--wordmark-track); text-transform: uppercase; color: var(--bone); }
+.gl-purple__bar { display: flex; }
+.gl-purple__bar span { flex: 1; height: 2.4rem; }
+.gl-purple__body { padding: 1.2rem 1.1rem 1.4rem; display: flex; flex-direction: column; gap: 0.55rem; }
+.gl-purple__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+
+/* --- 07 Image contact sheet ---------------------------------------------- */
+
+.gl-sheet { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1px; background: var(--rule-on-ink); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.gl-sheet .figure img { transition: filter var(--slow) var(--ease); }
+.gl-sheet .figure:hover img { filter: grayscale(0%); }
+/* Overlay caption: metadata caps, lower-left, over a gradient. */
+.gl-sheet__cap {
+  position: absolute; left: 0; bottom: 0; right: 0; padding: 0.7rem 0.8rem;
+  font-size: var(--meta-size); font-weight: 500; letter-spacing: var(--meta-track);
+  text-transform: uppercase; color: rgba(241,236,225,0.92);
+  background: linear-gradient(to top, rgba(11,10,12,0.88) 0%, rgba(11,10,12,0) 100%);
+}
+
+/* --- 08 Graphic language -------------------------------------------------- */
+
+.gl-graphic { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
+.gl-g { aspect-ratio: 4/3; border: 1px solid rgba(11,10,12,0.16); background: var(--warm-white); position: relative; display: flex; }
+.gl-g--crop { align-items: center; justify-content: center; }
+.gl-g--crop::before, .gl-g--crop::after {
+  content: ""; position: absolute; width: 0.9rem; height: 0.9rem;
+  border-color: rgba(11,10,12,0.4); border-style: solid;
+}
+.gl-g--crop::before { top: 0.8rem; left: 0.8rem; border-width: 1px 0 0 1px; }
+.gl-g--crop::after  { bottom: 0.8rem; right: 0.8rem; border-width: 0 1px 1px 0; }
+.gl-g__label { font-family: var(--display); font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(11,10,12,0.55); }
+.gl-g--cat { flex-direction: column; justify-content: space-between; padding: 1.1rem; }
+.gl-g__row { display: flex; justify-content: space-between; font-size: var(--meta-size); font-weight: 500; letter-spacing: var(--meta-track); text-transform: uppercase; color: rgba(11,10,12,0.58); }
+.gl-g__stack { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(11,10,12,0.72); }
+.gl-g__rule { height: 1px; background: rgba(11,10,12,0.16); }
+.gl-g--bars { background: var(--ink); border-color: transparent; display: grid; grid-template-columns: repeat(8, 1fr); align-items: end; gap: 0.35rem; padding: 1.1rem; }
+.gl-g--bars span { background: rgba(241,236,225,0.25); display: block; }
+.gl-g--space { align-items: center; justify-content: center; overflow: hidden; }
+.gl-g--space span { font-family: var(--display); font-size: clamp(1.8rem, 6vw, 4rem); letter-spacing: 0.1em; text-transform: uppercase; color: rgba(11,10,12,0.10); white-space: nowrap; }
+
+/* --- 09 Fashion objects --------------------------------------------------- */
+
+.gl-objects { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: clamp(1.2rem, 2.5vw, 2rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.gl-o { aspect-ratio: 3/2; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.gl-o--smoke { background: var(--smoke); border: 1px solid var(--rule-on-ink); }
+.gl-o--ink   { background: var(--ink); border: 1px solid var(--rule-on-ink); }
+.gl-o--plum  { background: var(--plum); align-items: flex-end; justify-content: flex-start; padding: 0.9rem; }
+.gl-o__label { font-family: var(--display); font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(241,236,225,0.75); border: 1px solid rgba(241,236,225,0.35); padding: 0.35rem 0.6rem; }
+.gl-o__word  { font-family: var(--display); font-size: clamp(1.1rem, 3.2vw, 2rem); letter-spacing: 0.14em; text-transform: uppercase; color: var(--bone); }
+.gl-o__emboss { font-family: var(--display); font-size: 1.6rem; letter-spacing: 0.12em; color: rgba(241,236,225,0.18); }
+
+/* --- 11 Applications ------------------------------------------------------ */
+
+.gl-apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); }
+.gl-app { position: relative; aspect-ratio: 16/9; overflow: hidden; background: var(--ink); border: 1px solid var(--rule-on-ink); }
+.gl-app img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.08); }
+.gl-app--square { aspect-ratio: 1/1; }
+.gl-app--title img { opacity: 0.22; filter: grayscale(100%) brightness(0.55); }
+.gl-app--title::after { content: ""; position: absolute; inset: 0; background: rgba(11,10,12,0.5); }
+.gl-app__centre { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.7rem; }
+.gl-app__word { font-family: var(--display); font-size: clamp(1rem, 2.6vw, 2rem); letter-spacing: 0.2em; text-transform: uppercase; color: var(--bone); }
+.gl-app__rule { width: 4.5rem; height: 1px; background: rgba(241,236,225,0.45); }
+.gl-app__third {
+  position: absolute; left: 1.1rem; bottom: 1.1rem; z-index: 1;
+  display: flex; flex-direction: column; gap: 0.35rem;
+  border-left: 1px solid var(--orchid); padding-left: 0.85rem;
+}
+.gl-app__third .quiet { color: rgba(241,236,225,0.75); }
+.gl-app__social {
+  position: absolute; inset: 0; z-index: 1;
+  display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem;
+  background: linear-gradient(to bottom, rgba(11,10,12,0.72) 0%, rgba(11,10,12,0.12) 30%, rgba(11,10,12,0.12) 60%, rgba(11,10,12,0.88) 100%);
+}
+.gl-app--cover {
+  background: var(--bone); border-color: var(--rule-on-bone);
+  display: flex; flex-direction: column; justify-content: space-between; padding: 1.4rem;
+}
+
+/* --- Footer --------------------------------------------------------------- */
+
+.gl-foot { display: flex; flex-direction: column; gap: clamp(1.8rem, 4vw, 3rem); align-items: flex-start; }
+.gl-foot__meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; width: 100%; }
+
+/* --- Responsive ----------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+  .gl-hero { min-height: 0; padding-block: clamp(3rem, 10vh, 5rem) clamp(3rem, 8vh, 5rem); }
+  .gl-hero__media { inset: 0; width: 100%; }
+  .gl-hero__media img { -webkit-mask-image: none; mask-image: none; object-position: center 10%; }
+  .gl-hero__media::after { background: linear-gradient(to bottom, rgba(11,10,12,0.4) 0%, rgba(11,10,12,0.82) 52%, var(--ink) 100%); }
+  .gl-hero__copy { max-width: none; }
+  .gl-swatch-grid { grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); }
+  .gl-sheet { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 34rem) {
+  .gl-lockup__mark { white-space: normal; text-align: center; }
+  .gl-marks, .gl-objects, .gl-apps, .gl-graphic { grid-template-columns: 1fr; }
+}
