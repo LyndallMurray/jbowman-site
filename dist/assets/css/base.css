@@ -89,7 +89,7 @@ a { color: inherit; text-decoration: none; }
 .muted { color: rgba(241, 236, 225, 0.70); }
 .band--bone .muted, .on-bone .muted { color: rgba(11, 10, 12, 0.68); }
 .quiet { color: rgba(241, 236, 225, 0.58); }
-.band--bone .quiet, .on-bone .quiet { color: rgba(11, 10, 12, 0.55); }
+.band--bone .quiet, .on-bone .quiet { color: rgba(11, 10, 12, 0.62); }
 
 /* The signature type moment: upright Belleza with one Montserrat italic.
    "Use it once per composition, never twice." */
@@ -104,7 +104,11 @@ a { color: inherit; text-decoration: none; }
 .band { padding: var(--band-y) var(--gutter); border-top: 1px solid var(--rule-on-ink); }
 .band--bone  { background: var(--bone); color: var(--ink); border-top-color: var(--rule-on-bone); }
 .band--warm  { background: var(--warm-white); color: var(--ink); border-top-color: var(--rule-on-bone); }
-.band--smoke { background: var(--smoke); }
+/* The guidelines' contrast law covers ink and bone but is silent on smoke.
+   Measured: Orchid on Smoke is 3.96:1 — below AA for small text. So on a smoke
+   ground the accent resolves to bone, and any accent use there degrades safely
+   rather than needing every call site to remember. */
+.band--smoke { background: var(--smoke); --accent-on-ink: var(--bone); }
 /* The one plum field per page. Headline + action only — never text-heavy. */
 .band--plum  { background: var(--plum); border-top-color: var(--rule-on-plum); }
 .band--flush { border-top: 0; }
@@ -222,7 +226,7 @@ a { color: inherit; text-decoration: none; }
 .figure--square   { aspect-ratio: 1/1; }
 .figure--wide     { aspect-ratio: 16/9; }
 .figure__cap { margin-top: 0.85rem; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(241,236,225,0.58); }
-.band--bone .figure__cap, .on-bone .figure__cap { color: rgba(11,10,12,0.55); }
+.band--bone .figure__cap, .on-bone .figure__cap { color: rgba(11,10,12,0.62); }
 
 /* Overlay type: lower-left, italic, lower case, one phrase. Metadata opposite. */
 .figure__overlay {
