@@ -1,0 +1,52 @@
+<!-- =====================================================================
+     J BOWMAN - click-to-load YouTube player
+     Paste into: Project Settings -> Custom Code -> Footer
+
+     In the Releases Collection Item, add an HTML Embed containing:
+         <div class="jb-yt" data-url="{{ YouTube URL }}"></div>
+     using Webflow's field picker for the field reference.
+
+     Nothing is requested from YouTube until the visitor clicks: no cookie,
+     no third-party connection on page load. A release with no URL removes
+     its own embed, so the page is never half-built.
+     ================================================================== -->
+<style>
+.jb-yt__btn{font-family:Montserrat,sans-serif;font-weight:500;font-size:9.6px;
+  letter-spacing:.22em;text-transform:uppercase;color:#b984b0;
+  background:none;border:1px solid rgba(185,132,176,.5);
+  padding:.7em 1.2em;cursor:pointer}
+.jb-yt__btn:hover{background:#b984b0;color:#0b0a0c}
+.jb-yt__frame{position:relative;aspect-ratio:16/9;margin-top:1.2rem;background:#000}
+.jb-yt__frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+</style>
+<script>
+(function(){
+  var ID=/^[A-Za-z0-9_-]{11}$/;
+  function idFrom(v){
+    v=(v||'').trim(); if(!v) return '';
+    if(ID.test(v)) return v;
+    var m=v.match(/(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+    return m?m[1]:'';
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.jb-yt'),function(host){
+    var id=idFrom(host.getAttribute('data-url'));
+    if(!id){ if(host.parentNode) host.parentNode.removeChild(host); return; }
+    var btn=document.createElement('button');
+    btn.type='button'; btn.className='jb-yt__btn';
+    btn.textContent='\u25B6 Watch';
+    btn.setAttribute('aria-label','Watch this track on YouTube');
+    host.appendChild(btn);
+    btn.addEventListener('click',function(){
+      var frame=document.createElement('div'); frame.className='jb-yt__frame';
+      var ifr=document.createElement('iframe');
+      ifr.src='https://www.youtube-nocookie.com/embed/'+id+
+        '?rel=0&modestbranding=1&playsinline=1&autoplay=1';
+      ifr.title='YouTube video player';
+      ifr.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      ifr.setAttribute('allowfullscreen','');
+      frame.appendChild(ifr);
+      host.replaceChild(frame,btn);
+    });
+  });
+})();
+</script>
