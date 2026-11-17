@@ -34,10 +34,29 @@ window.JB_CONFIG = {
    * their label), not a lyric-video or reaction channel.
    * ---------------------------------------------------------------------- */
   tracks: {
-    'JBM—001': '',   // "Say Hey (I Love You)"        — Michael Franti & Spearhead
-    'JBM—002': '',   // "The Sound of Sunshine"       — Michael Franti & Spearhead
-    'JBM—003': '',   // "Life Is Better With You"     — Michael Franti & Spearhead
-    'JBM—004': '',   // "I'm Alive (Life Sounds Like)"— Michael Franti & Spearhead
-    'JBM—005': ''    // Prolonging the Magic          — Cake (album, not a single)
+    /* THESE FOUR ARE UNVERIFIED. youtube.com is blocked from the session that
+       added them, so each ID comes from an indexed search result (title +
+       description), not from opening the video. Click each once and confirm
+       it is the right song AND an official upload, then delete this note. */
+
+    // "Michael Franti and Spearhead - Say Hey (I Love You) [Music Video] [HQ]"
+    // Described as the video from the album All Rebel Rockers.
+    'JBM—001': 'https://www.youtube.com/watch?v=MKHlXEVYOuY',
+
+    // "Michael Franti & Spearhead - The Sound Of Sunshine"
+    // Carries a 2010 Boo Boo Wax copyright line. Strongest of the four.
+    'JBM—002': 'https://www.youtube.com/watch?v=KqgHosrqJ8o',
+
+    // '"Life Is Better With You" - Official Music Video, Michael Franti'
+    // Least certain: a separate upload (LFS4jaWlhrA) carries the Boo Boo
+    // Wax / Capitol copyright line but is a LYRIC video, not the film.
+    'JBM—003': 'https://www.youtube.com/watch?v=1XEOVl875d0',
+
+    // "Michael Franti & Spearhead - I'm Alive (Life Sounds Like)"
+    // 2013, first single from All People. Directed by Zach Merck.
+    'JBM—004': 'https://www.youtube.com/watch?v=Fw0oOjZydZY',
+
+    // Cake album, not a single — needs a specific track video, or leave empty.
+    'JBM—005': ''
   }
 };
