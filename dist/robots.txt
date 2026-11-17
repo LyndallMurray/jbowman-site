@@ -1,0 +1,8 @@
+# J BOWMAN
+User-agent: *
+Allow: /
+
+# Internal brand reference, not for search.
+Disallow: /brand/
+
+Sitemap: https://jbowmanmusic.com/sitemap.xml
