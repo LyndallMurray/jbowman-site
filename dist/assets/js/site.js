@@ -192,13 +192,33 @@
 (function () {
   'use strict';
 
-  var rows = document.querySelectorAll('[data-youtube]');
+  // This block is its own IIFE, so it needs its own handle on the config.
+  var CFG = window.JB_CONFIG || {};
+
+  /* An ID may come from either place:
+   *   - config.js  tracks: { 'JBM—001': 'https://youtu.be/XXXXXXXXXXX' }
+   *   - markup     <article class="s-credit" data-youtube="XXXXXXXXXXX">
+   * config wins, so a non-technical edit never needs the HTML opened.
+   */
+  var ID = /^[A-Za-z0-9_-]{11}$/;
+
+  // Accept a bare ID or any ordinary YouTube URL form.
+  function idFrom(value) {
+    var v = (value || '').trim();
+    if (!v) return '';
+    if (ID.test(v)) return v;
+    var m = v.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : '';
+  }
+
+  var tracks = CFG.tracks || {};
+  var rows = document.querySelectorAll('.s-credit');
   if (!rows.length) return;
 
   rows.forEach(function (row, i) {
-    var id = (row.getAttribute('data-youtube') || '').trim();
-    // Guard against a placeholder being left in by accident.
-    if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
+    var cat = (row.querySelector('.s-credit__cat') || {}).textContent || '';
+    var id = idFrom(tracks[cat.trim()]) || idFrom(row.getAttribute('data-youtube'));
+    if (!id) return;                       // no control, row unchanged
 
     var title = (row.querySelector('.s-credit__title') || {}).textContent || 'this track';
     var panelId = 'yt-' + i;
@@ -209,7 +229,7 @@
     btn.setAttribute('aria-expanded', 'false');
     btn.setAttribute('aria-controls', panelId);
     btn.innerHTML = '<span class="tri" aria-hidden="true">&#9654;</span> Watch';
-    btn.setAttribute('aria-label', 'Watch ' + title.replace(/[“”]/g, '') + ' on YouTube');
+    btn.setAttribute('aria-label', 'Watch ' + title.replace(/[\u201C\u201D]/g, '') + ' on YouTube');
 
     var panel = document.createElement('div');
     panel.className = 's-credit__player';
