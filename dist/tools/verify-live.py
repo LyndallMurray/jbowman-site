@@ -64,17 +64,25 @@ def fetch(url, method="GET", redirect=True):
 
 # ---------------------------------------------------------------------------
 
+def apex_of(domain):
+    """www.jbowmanmusic.com and jbowmanmusic.com are the same registrable
+    domain. Pass either and the checks run over both hosts."""
+    return domain[4:] if domain.startswith("www.") else domain
+
+
 def is_subdomain(domain):
     """A staging host like jbowman-music.netlify.app has no www sibling and no
-    apex of its own, so the www and apex-vs-www checks do not apply. Two dots
-    or more means a subdomain here; that misreads example.co.uk, which this
-    site does not use."""
-    return domain.count(".") >= 2
+    apex of its own, so the www and apex-vs-www checks do not apply. `www.` is
+    stripped first, or the canonical host would be mistaken for staging and
+    skip the one check that matters most. Two dots or more after that means a
+    subdomain; that misreads example.co.uk, which this site does not use."""
+    return apex_of(domain).count(".") >= 2
 
 
 def check_dns(domain):
     print("\nDNS")
-    hosts = (domain,) if is_subdomain(domain) else (domain, f"www.{domain}")
+    apex = apex_of(domain)
+    hosts = (apex,) if is_subdomain(domain) else (apex, f"www.{apex}")
     for host in hosts:
         try:
             addrs = sorted({ai[4][0] for ai in socket.getaddrinfo(host, 443)})
@@ -87,7 +95,8 @@ def check_dns(domain):
 
 def check_tls(domain):
     print("\nTLS")
-    hosts = (domain,) if is_subdomain(domain) else (domain, f"www.{domain}")
+    apex = apex_of(domain)
+    hosts = (apex,) if is_subdomain(domain) else (apex, f"www.{apex}")
     for host in hosts:
         ctx = ssl.create_default_context()
         try:
@@ -100,7 +109,7 @@ def check_tls(domain):
                                         "%b %d %H:%M:%S %Y %Z").replace(
                 tzinfo=timezone.utc)
             days = (expires - datetime.now(timezone.utc)).days
-            covered = host in alt or f"*.{domain}" in alt
+            covered = host in alt or f"*.{apex_of(domain)}" in alt
             if covered:
                 record(PASS, f"{host} certificate valid",
                        f"expires in {days} days")
@@ -130,8 +139,9 @@ def check_one_canonical_host(domain):
             record(FAIL, f"{domain} returned {status}")
         return f"https://{domain}"
 
-    apex = f"https://{domain}/"
-    www = f"https://www.{domain}/"
+    root = apex_of(domain)
+    apex = f"https://{root}/"
+    www = f"https://www.{root}/"
 
     a_status, a_head, _, _ = fetch(apex, redirect=False)
     w_status, w_head, _, _ = fetch(www, redirect=False)
@@ -161,7 +171,7 @@ def check_one_canonical_host(domain):
         primary = www
 
     # http must reach https
-    h_status, h_head, _, _ = fetch(f"http://{domain}/", redirect=False)
+    h_status, h_head, _, _ = fetch(f"http://{root}/", redirect=False)
     if h_status in (301, 308) and h_head.get("Location", "").startswith("https"):
         record(PASS, "http redirects to https", f"{h_status}")
     elif h_status == 200:
@@ -323,7 +333,8 @@ def check_staging_not_indexed(staging):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--domain", default="jbowmanmusic.com")
+    ap.add_argument("--domain", default="www.jbowmanmusic.com",
+                help="either www.example.com or example.com; both hosts are checked")
     ap.add_argument("--staging", default=None,
                     help="e.g. j-bowman.webflow.io")
     args = ap.parse_args()

@@ -5,4 +5,4 @@ Allow: /
 # Internal brand reference, not for search.
 Disallow: /brand/
 
-Sitemap: https://jbowmanmusic.com/sitemap.xml
+Sitemap: https://www.jbowmanmusic.com/sitemap.xml

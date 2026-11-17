@@ -44,7 +44,14 @@ from datetime import date
 HERE = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.dirname(HERE)
 
-SITE = "https://jbowmanmusic.com"
+# The canonical host, including www or not. This MUST match the host the site
+# actually serves from — whichever one Netlify lists as the Primary domain.
+# The other host redirects to it, so naming the redirecting one in a canonical
+# tells Google the real page is somewhere it isn't.
+#
+# Override without editing this file:  python3 tools/seo.py --write \
+#                                        --site https://jbowmanmusic.com
+SITE = "https://www.jbowmanmusic.com"
 OLD_SITE = "https://jbowman.com"
 SHARE_IMAGE = "/assets/img/portrait.jpg"   # 1080x1080
 
@@ -96,7 +103,9 @@ ALTS = {
                       "desert road",
 }
 
-PERSON = {
+def person():
+    """Built at call time, not import time, so --site can change the host."""
+    return {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": f"{SITE}/#person",
@@ -115,17 +124,19 @@ PERSON = {
     # No sameAs yet: the social profile URLs are still unset in config.js.
     # An empty or guessed sameAs is worse than none — it is how a knowledge
     # panel gets attached to the wrong person.
-}
+    }
 
-WEBSITE = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": f"{SITE}/#website",
-    "url": f"{SITE}/",
-    "name": "J BOWMAN",
-    "publisher": {"@id": f"{SITE}/#person"},
-    "inLanguage": "en",
-}
+
+def website():
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": f"{SITE}/#website",
+        "url": f"{SITE}/",
+        "name": "J BOWMAN",
+        "publisher": {"@id": f"{SITE}/#person"},
+        "inLanguage": "en",
+    }
 
 
 def breadcrumbs(label, path):
@@ -163,16 +174,21 @@ def process(path, filename, html):
         changes.append(f"canonical -> {canonical}")
 
     # --- 2. og:image absolute ------------------------------------------
+    # Always SET it. An earlier version only rewrote a RELATIVE value, so
+    # changing the canonical host left og:image pointing at the old one —
+    # the same non-idempotency bug as og:url had, and just as quiet.
+    want_image = f"{SITE}{SHARE_IMAGE}"
     m = re.search(r'<meta property="og:image" content="([^"]*)">', html)
-    if m and not m.group(1).startswith("http"):
+    if m and m.group(1) != want_image:
+        was = "relative" if not m.group(1).startswith("http") else m.group(1)
         html = html.replace(m.group(0),
-                            f'<meta property="og:image" content="{SITE}{SHARE_IMAGE}">')
-        changes.append("og:image -> absolute URL (was relative; cards were broken)")
+                            f'<meta property="og:image" content="{want_image}">')
+        changes.append(f"og:image -> {want_image} (was {was})")
     # Dimensions let a scraper lay the card out before fetching the file.
     if 'property="og:image:width"' not in html:
         html = html.replace(
-            f'<meta property="og:image" content="{SITE}{SHARE_IMAGE}">',
-            f'<meta property="og:image" content="{SITE}{SHARE_IMAGE}">\n'
+            f'<meta property="og:image" content="{want_image}">',
+            f'<meta property="og:image" content="{want_image}">\n'
             '<meta property="og:image:width" content="1080">\n'
             '<meta property="og:image:height" content="1080">\n'
             '<meta property="og:image:alt" content="Portrait of J Bowman">')
@@ -216,7 +232,7 @@ def process(path, filename, html):
     html = re.sub(r'\s*<script type="application/ld\+json">.*?</script>', "",
                   html, flags=re.S)
     if path == "/":
-        block = ld(PERSON) + "\n" + ld(WEBSITE)
+        block = ld(person()) + "\n" + ld(website())
         changes.append("JSON-LD: Person + WebSite")
     else:
         label = re.search(r"<title>([^<]*?)\s*—", html)
@@ -280,7 +296,11 @@ into each page's own Page Settings -> Custom Code -> Head.
 
 
 def main():
+    global SITE
     write = "--write" in sys.argv
+    if "--site" in sys.argv:
+        SITE = sys.argv[sys.argv.index("--site") + 1].rstrip("/")
+    print(f"canonical host: {SITE}")
     total = 0
     for path, (filename, _) in PAGES.items():
         full = os.path.join(DIST, filename)
