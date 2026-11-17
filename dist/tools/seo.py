@@ -49,13 +49,21 @@ OLD_SITE = "https://jbowman.com"
 SHARE_IMAGE = "/assets/img/portrait.jpg"   # 1080x1080
 
 # path on the live site -> (file, priority)
+#
+# The paths are EXTENSIONLESS and the files keep their .html names. Both
+# Netlify and Webflow serve /about from about.html, and both treat the
+# extensionless form as the real URL. Canonicals therefore have to name the
+# extensionless path, or every page claims a canonical URL that redirects —
+# which is the same self-defeating signal as naming the wrong domain.
+# netlify.toml 301s the .html form to the clean one so there is exactly one
+# URL per page.
 PAGES = {
     "/": ("index.html", "1.0"),
-    "/work.html": ("work.html", "0.9"),
-    "/services.html": ("services.html", "0.9"),
-    "/about.html": ("about.html", "0.8"),
-    "/connect.html": ("connect.html", "0.8"),
-    "/journal.html": ("journal.html", "0.6"),
+    "/work": ("work.html", "0.9"),
+    "/services": ("services.html", "0.9"),
+    "/about": ("about.html", "0.8"),
+    "/connect": ("connect.html", "0.8"),
+    "/journal": ("journal.html", "0.6"),
 }
 
 # Descriptions that overran what search results display. Rewritten to keep
@@ -171,7 +179,16 @@ def process(path, filename, html):
         changes.append("og:image dimensions + alt added")
 
     # --- 3. og:url ------------------------------------------------------
-    if 'property="og:url"' not in html:
+    # Always SET it, never just add it. An earlier version only inserted
+    # og:url when absent, so a second run left a stale value behind while
+    # reporting success — og:url and the canonical disagreed, which is the
+    # same contradictory signal this script exists to prevent.
+    if 'property="og:url"' in html:
+        html, k = re.subn(r'<meta property="og:url" content="[^"]*">',
+                          f'<meta property="og:url" content="{canonical}">', html)
+        if k:
+            changes.append(f"og:url -> {canonical}")
+    else:
         html = html.replace('<meta property="og:type"',
                             f'<meta property="og:url" content="{canonical}">\n'
                             '<meta property="og:type"', 1)
