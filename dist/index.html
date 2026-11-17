@@ -56,6 +56,31 @@
     </div>
   </header>
 
+  <!-- Hero reel. Section 02 of the brief's homepage sequence.
+       No autoplay: the brief requires sound to be opt-in. The file is the
+       supplied original, unaltered and byte-identical. -->
+  <section class="s-reel reveal" aria-labelledby="reel-t">
+    <h2 class="visually-hidden" id="reel-t">Showreel</h2>
+    <div class="s-reel__frame">
+      <video
+        controls
+        preload="metadata"
+        playsinline
+        poster="assets/img/reel-poster.jpg"
+        width="1024" height="576"
+        aria-describedby="reel-desc">
+        <source src="assets/video/reel.mp4" type="video/mp4">
+        <p class="body muted" style="padding:1.5rem">Your browser cannot play this video.
+          <a class="link-arrow" href="assets/video/reel.mp4">Download the reel <span aria-hidden="true">→</span></a>
+        </p>
+      </video>
+    </div>
+    <div class="s-reel__meta">
+      <span class="s-reel__cat">Showreel · Live, studio and screen · 00:46</span>
+      <span class="s-reel__phrase" id="reel-desc">forty-six seconds, every side of it</span>
+    </div>
+  </section>
+
   <section class="band band--flush" aria-labelledby="intro-t">
     <div class="split split--lead">
       <div class="s-statement reveal">

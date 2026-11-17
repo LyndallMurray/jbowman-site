@@ -264,3 +264,35 @@
   .s-discipline__body, .s-discipline__cta, .s-discipline .s-capabilities { grid-column: 2; }
   .s-discipline__cta { margin-top: 0.4rem; }
 }
+
+/* --- Hero reel -----------------------------------------------------------
+   Section 02 of the brief's homepage sequence. The brief is explicit:
+   "Sound must be opt-in, never autoplay unexpectedly" — so no autoplay, no
+   muted-loop trick, just a poster and a play control the visitor chooses.
+
+   The poster is grayscale like every other image on the site; the film itself
+   plays in colour. That is the brand's "colour is earned" rule made literal:
+   the reel is the one place colour arrives.
+   -------------------------------------------------------------------------- */
+
+.s-reel { padding: 0 var(--gutter) var(--band-y); }
+.s-reel__frame {
+  position: relative; border: 1px solid var(--rule-on-ink);
+  background: var(--ink); overflow: hidden;
+}
+.s-reel__frame video {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;
+  background: var(--ink);
+}
+.s-reel__meta {
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  gap: 0.6rem 2rem; margin-top: 0.9rem;
+}
+/* Metadata in medium caps one side, the italic phrase the other — the image
+   rule from the guidelines, applied to moving image. */
+.s-reel__cat { font-size: var(--meta-size); font-weight: 500; letter-spacing: var(--meta-track); text-transform: uppercase; color: rgba(241,236,225,0.58); }
+.s-reel__phrase { font-style: italic; font-size: 0.9rem; color: rgba(241,236,225,0.78); }
+
+@media (max-width: 60rem) {
+  .s-reel__meta { flex-direction: column; gap: 0.35rem; }
+}
