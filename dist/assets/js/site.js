@@ -164,11 +164,37 @@
 
     submit.disabled = true;
     say('Sending…');
-    fetch(CFG.formEndpoint, {
-      method: 'POST',
-      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify(d)
-    })
+
+    /* Two kinds of endpoint, wanting different bodies.
+     *
+     * A RELATIVE path means Netlify Forms: the submission goes to this site's
+     * own origin as url-encoded data and must carry `form-name` so Netlify
+     * knows which form it belongs to. Netlify rejects a JSON body outright.
+     *
+     * An ABSOLUTE URL means a third-party collector — Formspree, Basin, a
+     * webhook — and those take JSON.
+     *
+     * Either way a non-2xx response falls through to the mail client below,
+     * so hosting this on something that is not Netlify degrades to the old
+     * behaviour instead of losing the enquiry. */
+    var ownOrigin = CFG.formEndpoint.charAt(0) === '/';
+    var body, headers;
+
+    if (ownOrigin) {
+      var params = new URLSearchParams();
+      params.append('form-name', form.getAttribute('name') || 'enquiry');
+      Object.keys(d).forEach(function (k) {
+        /* website is the honeypot; form-name is appended above. */
+        if (k !== 'website' && k !== 'form-name') params.append(k, d[k]);
+      });
+      body = params.toString();
+      headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
+    } else {
+      body = JSON.stringify(d);
+      headers = { Accept: 'application/json', 'Content-Type': 'application/json' };
+    }
+
+    fetch(CFG.formEndpoint, { method: 'POST', headers: headers, body: body })
       .then(function (r) { if (!r.ok) throw new Error(r.status); form.reset(); say('Thank you — your enquiry has been sent. You will hear back shortly.'); })
       .catch(function () {
         say(CFG.contactEmail ? 'That did not send. Opening your email app instead.' : 'That did not send. Please try again shortly.', 'error');

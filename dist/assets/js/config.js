@@ -8,10 +8,18 @@ window.JB_CONFIG = {
      Archaus Agency, the management company. */
   contactEmail: 'hello@archausagency.com',
 
-  /* OPTIONAL — a POST endpoint (Formspree, Basin, Netlify Forms, your own).
-     Set: the form posts there and the visitor stays on the page.
-     Empty: falls back to opening their mail client, pre-filled. */
-  formEndpoint: '',
+  /* Where the enquiry form posts.
+     Empty          → opens the visitor's mail client, pre-filled.
+     A RELATIVE path → Netlify Forms. Submissions are captured by Netlify and
+                       emailed to contactEmail; the visitor stays on the page
+                       and needs no mail app. Requires Netlify hosting and
+                       Forms enabled on the site.
+     An ABSOLUTE URL → a third-party collector (Formspree, Basin, a webhook),
+                       posted as JSON.
+
+     Set to '/' for Netlify. On any other host the POST fails and the form
+     falls back to the mail client, so nothing is lost either way. */
+  formEndpoint: '/',
 
   /* OPTIONAL — profiles. Any left empty render as plain text, never dead links. */
   social: { instagram: '', spotify: '', imdb: '', linkedin: '' },

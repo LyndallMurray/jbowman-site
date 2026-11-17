@@ -68,7 +68,15 @@
   <section class="band band--bone" aria-labelledby="form-t">
     <div class="band__head reveal"><span class="band__n" aria-hidden="true">02</span><h2 class="display-3" id="form-t">Contact Form</h2></div>
 
-    <form class="s-form reveal" id="enquiry" novalidate>
+    <!-- name + data-netlify is how Netlify finds this form at deploy time and
+         starts collecting submissions. data-netlify-honeypot points at the
+         existing spam-trap field below, so Netlify silently discards anything
+         that fills it. The hidden form-name input is what a no-JavaScript
+         submit needs; site.js appends the same value for its AJAX submit.
+         All of it is inert on any other host. -->
+    <form class="s-form reveal" id="enquiry" name="enquiry" method="POST"
+          data-netlify="true" data-netlify-honeypot="website" novalidate>
+      <input type="hidden" name="form-name" value="enquiry">
       <!-- Spam trap: hidden from people, tempting to bots. -->
       <div class="hp" aria-hidden="true">
         <label for="website">Website</label>
