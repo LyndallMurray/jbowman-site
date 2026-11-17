@@ -4,9 +4,9 @@
  * ======================================================================== */
 window.JB_CONFIG = {
 
-  /* REQUIRED — where professional enquiries should land. Until this is set,
-     the Connect form says so plainly rather than swallowing an enquiry. */
-  contactEmail: '',          // e.g. 'management@jbowman.com'
+  /* REQUIRED — where professional enquiries should land.
+     Archaus Agency, the management company. */
+  contactEmail: 'hello@archausagency.com',
 
   /* OPTIONAL — a POST endpoint (Formspree, Basin, Netlify Forms, your own).
      Set: the form posts there and the visitor stays on the page.
