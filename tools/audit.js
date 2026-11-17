@@ -20,7 +20,7 @@ const CHROME = require('fs').existsSync('/opt/pw-browsers/chromium-1243/chrome-l
   : '/opt/pw-browsers/chromium-1243/chrome-linux/chrome';
 
 const BASE = 'http://127.0.0.1:8140/';
-const PAGES = ['index.html', 'about.html', 'work.html', 'journal.html', 'connect.html', 'brand/index.html'];
+const PAGES = ['index.html', 'about.html', 'work.html', 'services.html', 'journal.html', 'connect.html', 'brand/index.html'];
 const WIDTHS = [1600, 1280, 900, 600, 390, 320];
 
 const INK = [11, 10, 12], BONE = [241, 236, 225], PLUM = [110, 42, 92], ORCHID = [185, 132, 176];

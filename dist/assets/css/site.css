@@ -44,7 +44,10 @@
 /* Interior pages: type only, no media. */
 .s-hero--page { min-height: 0; padding-block: clamp(5rem, 16vh, 11rem) clamp(3rem, 8vh, 6rem); }
 .s-hero--page .s-hero__inner { gap: 1.5rem; }
-.s-hero--page h1 { max-width: 20ch; }
+/* Page titles break where the writer intended rather than orphaning a word.
+   Measured across 390–1500px: 20ch threw the Services headline onto three
+   ragged lines; 26ch holds every page title to two. */
+.s-hero--page h1 { max-width: 26ch; }
 
 /* --- Statement ------------------------------------------------------------ */
 
@@ -172,4 +175,92 @@
   .s-list { grid-template-columns: 1fr; }
   .s-form { grid-template-columns: 1fr; }
   .s-foot__grid { flex-direction: column; }
+}
+
+/* --- Marquee -------------------------------------------------------------
+   A continuous run of names. Deliberately NOT a logo wall: the brief rules
+   that out ("avoid a crowded logo wall; use names and projects with accurate
+   role descriptions"), and third-party marks would need each owner's licence.
+   If official logo files are ever cleared and supplied, swap the <li> text
+   for <img> and keep everything else.
+
+   The track is duplicated so the loop is seamless; the copy is aria-hidden so
+   screen readers hear the list once. Motion stops entirely under
+   prefers-reduced-motion and pauses on hover or keyboard focus.
+   -------------------------------------------------------------------------- */
+
+.s-marquee {
+  position: relative;
+  display: flex; overflow: hidden;
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+  border-block: 1px solid var(--rule-on-ink);
+  /* Fade the ends into the ground so names enter and leave, not cut off. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.band--bone .s-marquee { border-block-color: var(--rule-on-bone); }
+
+.s-marquee__track {
+  display: flex; flex: none; align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  padding-right: clamp(2rem, 5vw, 4.5rem);
+  animation: s-marquee 42s linear infinite;
+  will-change: transform;
+}
+.s-marquee:hover .s-marquee__track,
+.s-marquee:focus-within .s-marquee__track { animation-play-state: paused; }
+
+.s-marquee__track li {
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 2.6vw, 2.2rem);
+  letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
+  color: rgba(241, 236, 225, 0.82);
+}
+.band--bone .s-marquee__track li { color: rgba(11, 10, 12, 0.78); }
+
+@keyframes s-marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  /* Wrap to a static list rather than freezing a half-scrolled track. */
+  .s-marquee { overflow: visible; -webkit-mask-image: none; mask-image: none; }
+  .s-marquee__track { animation: none; flex-wrap: wrap; row-gap: 0.8rem; }
+  .s-marquee__track[aria-hidden="true"] { display: none; }
+}
+
+/* --- Services ------------------------------------------------------------- */
+
+.s-disciplines { display: flex; flex-direction: column; }
+.s-discipline {
+  display: grid; grid-template-columns: 4rem minmax(0, 1fr) minmax(0, 1.25fr) auto;
+  gap: 1.5rem; align-items: baseline;
+  padding: clamp(1.6rem, 3vw, 2.4rem) 0; border-top: 1px solid var(--rule-on-ink);
+}
+.band--bone .s-discipline { border-top-color: var(--rule-on-bone); }
+.s-discipline:last-child { border-bottom: 1px solid var(--rule-on-ink); }
+.band--bone .s-discipline:last-child { border-bottom-color: var(--rule-on-bone); }
+.s-discipline__n { font-family: var(--display); font-size: 0.8rem; letter-spacing: 0.18em; color: var(--accent-on-ink); }
+.band--bone .s-discipline__n { color: var(--accent-on-bone); }
+.s-discipline__name { font-family: var(--display); font-size: clamp(1.1rem, 2vw, 1.5rem); letter-spacing: 0.06em; text-transform: uppercase; }
+.s-discipline__body { font-size: 0.92rem; line-height: 1.7; color: rgba(241,236,225,0.70); }
+.band--bone .s-discipline__body { color: rgba(11,10,12,0.66); }
+.s-discipline__cta {
+  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent-on-ink); white-space: nowrap;
+}
+.band--bone .s-discipline__cta { color: var(--accent-on-bone); }
+.s-discipline__cta span { display: inline-block; transition: transform var(--quick) var(--ease); }
+.s-discipline__cta:hover span { transform: translateX(0.35rem); }
+
+/* Capability list — what sits inside each pathway. */
+.s-capabilities { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.3rem; }
+.s-capabilities li {
+  font-size: 0.6rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 0.4rem 0.7rem; border: 1px solid var(--rule-on-ink); color: rgba(241,236,225,0.72);
+}
+.band--bone .s-capabilities li { border-color: var(--rule-on-bone); color: rgba(11,10,12,0.68); }
+
+@media (max-width: 60rem) {
+  .s-discipline { grid-template-columns: 3rem minmax(0,1fr); gap: 0.6rem 1.1rem; }
+  .s-discipline__body, .s-discipline__cta, .s-discipline .s-capabilities { grid-column: 2; }
+  .s-discipline__cta { margin-top: 0.4rem; }
 }
