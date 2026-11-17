@@ -207,7 +207,10 @@
     var v = (value || '').trim();
     if (!v) return '';
     if (ID.test(v)) return v;
-    var m = v.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+    // Matches a bare ID, any watch/share/short link, and a whole <iframe>
+    // snippet pasted straight from YouTube's Share > Embed panel —
+    // including the youtube-nocookie host.
+    var m = v.match(/(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
     return m ? m[1] : '';
   }
 
