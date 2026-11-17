@@ -1,0 +1,18 @@
+# Build artifacts and generated previews. These were tracked by mistake and
+# accounted for 31MB of a 45MB repository: a 9.3MB distributable zip and
+# 22MB of full-page screenshots, both regenerable from the source.
+.preview/
+jbowman-site.zip
+*.tar.gz
+*.bundle
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

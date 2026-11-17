@@ -1,0 +1,64 @@
+# Publishes the J BOWMAN site to GitHub Pages on every push to the build
+# branch. The site is a plain static build with no dependencies and no build
+# step, so this uploads dist/ as-is.
+#
+# One-time setup, which only the repository owner can do:
+#   Settings -> Pages -> Build and deployment -> Source: GitHub Actions
+# Without that, this workflow runs and the deploy step fails.
+#
+# A custom domain (jbowmanmusic.com) is set under Settings -> Pages, which
+# writes a CNAME file into the published site. Do not also commit a CNAME
+# file, or the two fight each other on every deploy.
+
+name: Deploy site to Pages
+
+on:
+  push:
+    branches: [jbowman-build, main]
+  workflow_dispatch:
+
+# Pages needs these; the default token has neither.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race. Queue rather than cancel, so a publish that is
+# already uploading is allowed to finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Verify the build is intact
+        run: |
+          set -euo pipefail
+          # Fail loudly here rather than publishing a half-built site.
+          for page in index about work services journal connect; do
+            test -f "dist/$page.html" || { echo "missing dist/$page.html"; exit 1; }
+          done
+          test -f dist/assets/css/tokens.css || { echo "missing tokens.css"; exit 1; }
+          test -f dist/sitemap.xml          || { echo "missing sitemap.xml"; exit 1; }
+          test -f dist/robots.txt           || { echo "missing robots.txt"; exit 1; }
+          echo "6 pages, tokens, sitemap and robots all present"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload dist/
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
