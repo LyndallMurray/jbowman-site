@@ -296,3 +296,51 @@
 @media (max-width: 60rem) {
   .s-reel__meta { flex-direction: column; gap: 0.35rem; }
 }
+
+/* --- Track players --------------------------------------------------------
+   A facade embed. The resting state is our own markup — no YouTube request,
+   no third-party cookie, no player JS — until the visitor presses play. Only
+   then is the iframe created, pointed at youtube-nocookie.com.
+
+   Why not a plain <iframe> per track: each one pulls roughly a megabyte of
+   player code and sets tracking cookies on page load, before anyone has asked
+   for a video. The brief rules on both — "Protect Core Web Vitals and mobile
+   performance" and "configure consent appropriately for analytics and embeds".
+   Five embeds on the Work page would cost ~5MB and a consent banner. This
+   costs nothing until it is wanted.
+
+   The resting state is also deliberately NOT a YouTube thumbnail: that is
+   label artwork in full colour, which would fight a monochrome editorial page
+   and raises a rights question the typography does not.
+   -------------------------------------------------------------------------- */
+
+.s-credit__play {
+  /* The row is a grid; left to flow, the control lands under the catalogue
+     number. Put it under the title instead. */
+  grid-column: 2; justify-self: start;
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  margin-top: 0.5rem; padding: 0.5rem 0.9rem;
+  background: none; border: 1px solid var(--rule-on-ink); cursor: pointer;
+  font-family: var(--sans); font-size: 0.58rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: rgba(241,236,225,0.82);
+  transition: background var(--quick) var(--ease), color var(--quick) var(--ease), border-color var(--quick) var(--ease);
+}
+.band--bone .s-credit__play { border-color: var(--rule-on-bone); color: rgba(11,10,12,0.78); }
+.s-credit__play:hover { background: var(--bone); color: var(--ink); border-color: var(--bone); }
+.band--bone .s-credit__play:hover { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+.s-credit__play .tri { font-size: 0.7em; line-height: 1; }
+
+/* The player drops in under its row, spanning the full table width. */
+.s-credit__player { grid-column: 1 / -1; margin-top: 1.2rem; }
+.s-credit__player[hidden] { display: none; }
+.s-credit__player .frame {
+  position: relative; aspect-ratio: 16 / 9; width: 100%;
+  background: var(--ink); border: 1px solid var(--rule-on-ink);
+}
+.band--bone .s-credit__player .frame { border-color: var(--rule-on-bone); }
+.s-credit__player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.s-credit__note {
+  margin-top: 0.6rem; font-size: var(--meta-size); font-weight: 500;
+  letter-spacing: var(--meta-track); text-transform: uppercase; color: rgba(241,236,225,0.58);
+}
+.band--bone .s-credit__note { color: rgba(11,10,12,0.55); }

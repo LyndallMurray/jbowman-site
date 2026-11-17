@@ -177,3 +177,79 @@
       .finally(function () { submit.disabled = false; });
   });
 })();
+
+/* ---------------------------------------------------------------------------
+ * Track players — facade embeds.
+ *
+ * A credit row with data-youtube="VIDEO_ID" gains a play control. Nothing is
+ * requested from YouTube until that control is pressed; pressing it IS the
+ * consent, which is why no banner is needed for these. The iframe is built
+ * once, against youtube-nocookie.com, and reused after that.
+ *
+ * A row with no data-youtube renders exactly as it did before, so the page is
+ * never half-built while IDs are still being gathered.
+ * ------------------------------------------------------------------------- */
+(function () {
+  'use strict';
+
+  var rows = document.querySelectorAll('[data-youtube]');
+  if (!rows.length) return;
+
+  rows.forEach(function (row, i) {
+    var id = (row.getAttribute('data-youtube') || '').trim();
+    // Guard against a placeholder being left in by accident.
+    if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
+
+    var title = (row.querySelector('.s-credit__title') || {}).textContent || 'this track';
+    var panelId = 'yt-' + i;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 's-credit__play';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-controls', panelId);
+    btn.innerHTML = '<span class="tri" aria-hidden="true">&#9654;</span> Watch';
+    btn.setAttribute('aria-label', 'Watch ' + title.replace(/[“”]/g, '') + ' on YouTube');
+
+    var panel = document.createElement('div');
+    panel.className = 's-credit__player';
+    panel.id = panelId;
+    panel.hidden = true;
+    panel.innerHTML = '<div class="frame"></div>' +
+      '<p class="s-credit__note">Plays from YouTube · loaded only when you press play</p>';
+
+    (row.querySelector('.s-credit__roles') || row).insertAdjacentElement('afterend', btn);
+    row.appendChild(panel);
+
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+
+      if (open) {
+        // Collapse and tear the player down, so nothing keeps playing unseen.
+        panel.hidden = true;
+        panel.querySelector('.frame').innerHTML = '';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<span class="tri" aria-hidden="true">&#9654;</span> Watch';
+        return;
+      }
+
+      var frame = panel.querySelector('.frame');
+      if (!frame.firstChild) {
+        var iframe = document.createElement('iframe');
+        // nocookie host, no related-video wall, autoplay because the visitor
+        // just asked for it.
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&modestbranding=1&playsinline=1&autoplay=1';
+        iframe.title = title + ' — official video on YouTube';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.loading = 'lazy';
+        frame.appendChild(iframe);
+      }
+      panel.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      btn.innerHTML = '<span class="tri" aria-hidden="true">&#9632;</span> Close';
+      panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
+  });
+})();
