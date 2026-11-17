@@ -344,3 +344,8 @@
   letter-spacing: var(--meta-track); text-transform: uppercase; color: rgba(241,236,225,0.58);
 }
 .band--bone .s-credit__note { color: rgba(11,10,12,0.55); }
+
+/* Fallback link under a player — always present, whatever the embed does. */
+.s-credit__note a { text-decoration: underline; text-underline-offset: 0.25em; color: var(--accent-on-ink); }
+.band--bone .s-credit__note a { color: var(--accent-on-bone); }
+.s-credit__out { margin-top: 0.35rem; }

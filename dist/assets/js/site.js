@@ -214,6 +214,27 @@
     return m ? m[1] : '';
   }
 
+  /* An iframe fires 'load' even when the frame was refused, so the load
+   * event cannot tell us whether a video is really playing. Probe instead:
+   * ask the browser to fetch a script from youtube.com. If that is refused,
+   * this page cannot reach YouTube at all — which is what happens inside a
+   * sandboxed preview that blocks third-party frames. Only run it after a
+   * click, so nothing contacts YouTube before the visitor asks.
+   */
+  function probeYouTube(cb) {
+    if (window.__jbYT !== undefined) return cb(window.__jbYT);
+    var done = function (ok) {
+      if (window.__jbYT !== undefined) return;
+      window.__jbYT = ok; cb(ok);
+    };
+    var s = document.createElement('script');
+    s.src = 'https://www.youtube.com/iframe_api';
+    s.onload = function () { done(true); };
+    s.onerror = function () { done(false); };
+    document.head.appendChild(s);
+    setTimeout(function () { done(false); }, 6000);
+  }
+
   var tracks = CFG.tracks || {};
   var rows = document.querySelectorAll('.s-credit');
   if (!rows.length) return;
@@ -257,6 +278,7 @@
       }
 
       var frame = panel.querySelector('.frame');
+      var note = panel.querySelector('.s-credit__note');
       if (!frame.firstChild) {
         var iframe = document.createElement('iframe');
         // nocookie host, no related-video wall, autoplay because the visitor
@@ -268,6 +290,23 @@
         iframe.setAttribute('allowfullscreen', '');
         iframe.loading = 'lazy';
         frame.appendChild(iframe);
+
+        note.textContent = 'Loading from YouTube…';
+        probeYouTube(function (reachable) {
+          note.textContent = reachable
+            ? 'Playing here · from YouTube'
+            : 'This page cannot reach YouTube, so the video cannot play inline here. '
+              + 'That is the preview sandbox, not the site — it plays on the deployed site.';
+        });
+      }
+
+      // Always offer a way out, whatever the embed does.
+      if (!panel.querySelector('.s-credit__out')) {
+        var out = document.createElement('p');
+        out.className = 's-credit__note s-credit__out';
+        out.innerHTML = '<a href="https://www.youtube.com/watch?v=' + id +
+          '" target="_blank" rel="noopener">Open on YouTube &#8599;</a>';
+        panel.appendChild(out);
       }
       panel.hidden = false;
       btn.setAttribute('aria-expanded', 'true');
