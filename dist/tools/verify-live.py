@@ -64,9 +64,18 @@ def fetch(url, method="GET", redirect=True):
 
 # ---------------------------------------------------------------------------
 
+def is_subdomain(domain):
+    """A staging host like jbowman-music.netlify.app has no www sibling and no
+    apex of its own, so the www and apex-vs-www checks do not apply. Two dots
+    or more means a subdomain here; that misreads example.co.uk, which this
+    site does not use."""
+    return domain.count(".") >= 2
+
+
 def check_dns(domain):
     print("\nDNS")
-    for host in (domain, f"www.{domain}"):
+    hosts = (domain,) if is_subdomain(domain) else (domain, f"www.{domain}")
+    for host in hosts:
         try:
             addrs = sorted({ai[4][0] for ai in socket.getaddrinfo(host, 443)})
             record(PASS, f"{host} resolves", ", ".join(addrs))
@@ -78,7 +87,8 @@ def check_dns(domain):
 
 def check_tls(domain):
     print("\nTLS")
-    for host in (domain, f"www.{domain}"):
+    hosts = (domain,) if is_subdomain(domain) else (domain, f"www.{domain}")
+    for host in hosts:
         ctx = ssl.create_default_context()
         try:
             with socket.create_connection((host, 443), timeout=15) as sock:
@@ -109,6 +119,17 @@ def check_one_canonical_host(domain):
     the same pages. One has to redirect to the other, or the pages compete
     with themselves."""
     print("\nCanonical host")
+
+    if is_subdomain(domain):
+        # A staging host has no www sibling to compete with, so the only
+        # thing worth checking is that it serves over https.
+        status, _, _, _ = fetch(f"https://{domain}/", redirect=False)
+        if status == 200:
+            record(PASS, f"{domain} serves over https")
+        else:
+            record(FAIL, f"{domain} returned {status}")
+        return f"https://{domain}"
+
     apex = f"https://{domain}/"
     www = f"https://www.{domain}/"
 
@@ -179,6 +200,14 @@ def check_canonicals(pages, base):
         want = (base + path).rstrip("/") or base
         if canon.rstrip("/") == want.rstrip("/"):
             record(PASS, f"{path} canonical is self-referential")
+        elif ".netlify.app" in base or ".webflow.io" in base:
+            # Expected while the real domain is not connected yet: the pages
+            # correctly name their intended home rather than the staging host.
+            # That is what you want — it keeps the staging copy from competing
+            # for the same words — so it is a note, not a failure.
+            record(WARN, f"{path} canonical names the production domain",
+                   f"says {canon} while served from staging. Correct for now; "
+                   f"it becomes self-referential once the domain is attached.")
         else:
             record(FAIL, f"{path} canonical points elsewhere",
                    f"says {canon}, should be {want}. A canonical naming "
